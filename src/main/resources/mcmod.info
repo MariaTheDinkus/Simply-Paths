@@ -1,0 +1,16 @@
+[
+{
+  "modid": "simplypaths",
+  "name": "Simply Paths",
+  "description": "Simply Paths is a mod which adds many types of paths to Minecraft based on both Custom and Vanilla blocks.",
+  "version": "1.0.0",
+  "mcversion": "1.7.10",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["momnop"],
+  "credits": "Vazkii for Path Walkspeed Code and Creative Tab Order Code, LupusX for Worn Path Texture and Idea for Paths",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
