@@ -11,6 +11,9 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemAxe;
+import net.minecraft.item.ItemPickaxe;
+import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.client.event.DrawBlockHighlightEvent;
@@ -41,18 +44,10 @@ public class SimplyPathsEventHandler {
 	@SubscribeEvent
 	public void onPlayerInteractShovel(PlayerInteractEvent event) {
 		ItemStack getHeldItem = event.entityPlayer.getCurrentEquippedItem();
-
+		
 		if (event.action == PlayerInteractEvent.Action.RIGHT_CLICK_BLOCK) {
 			if (getHeldItem != null
-					&& getHeldItem.getItem() == Items.diamond_shovel
-					|| getHeldItem != null
-					&& getHeldItem.getItem() == Items.golden_shovel
-					|| getHeldItem != null
-					&& getHeldItem.getItem() == Items.iron_shovel
-					|| getHeldItem != null
-					&& getHeldItem.getItem() == Items.stone_shovel
-					|| getHeldItem != null
-					&& getHeldItem.getItem() == Items.wooden_shovel) {
+					&& getHeldItem.getItem() instanceof ItemSpade) {
 				if (event.world.blockExists(event.x, event.y, event.z)
 						&& event.world.getBlock(event.x, event.y, event.z) == Blocks.grass) {
 					getHeldItem.damageItem(1, event.entityPlayer);
@@ -94,16 +89,7 @@ public class SimplyPathsEventHandler {
 
 				}
 
-			} else if (getHeldItem == null
-					|| getHeldItem.getItem() != Items.diamond_shovel
-					|| getHeldItem == null
-					|| getHeldItem.getItem() != Items.golden_shovel
-					|| getHeldItem == null
-					|| getHeldItem.getItem() != Items.iron_shovel
-					|| getHeldItem == null
-					|| getHeldItem.getItem() != Items.stone_shovel
-					|| getHeldItem == null
-					|| getHeldItem.getItem() != Items.wooden_shovel) {
+			} else {
 
 			}
 		}
@@ -115,15 +101,7 @@ public class SimplyPathsEventHandler {
 
 		if (event.action == PlayerInteractEvent.Action.RIGHT_CLICK_BLOCK) {
 			if (getHeldItem != null
-					&& getHeldItem.getItem() == Items.diamond_pickaxe
-					|| getHeldItem != null
-					&& getHeldItem.getItem() == Items.golden_pickaxe
-					|| getHeldItem != null
-					&& getHeldItem.getItem() == Items.iron_pickaxe
-					|| getHeldItem != null
-					&& getHeldItem.getItem() == Items.stone_pickaxe
-					|| getHeldItem != null
-					&& getHeldItem.getItem() == Items.wooden_pickaxe) {
+					&& getHeldItem.getItem() instanceof ItemPickaxe) {
 				if (event.world.blockExists(event.x, event.y, event.z)
 						&& event.world.getBlock(event.x, event.y, event.z) == Blocks.stone) {
 					getHeldItem.damageItem(1, event.entityPlayer);
@@ -193,16 +171,7 @@ public class SimplyPathsEventHandler {
 				} else {
 
 				}
-			} else if (getHeldItem == null
-					|| getHeldItem.getItem() != Items.diamond_pickaxe
-					|| getHeldItem == null
-					|| getHeldItem.getItem() != Items.golden_pickaxe
-					|| getHeldItem == null
-					|| getHeldItem.getItem() != Items.iron_pickaxe
-					|| getHeldItem == null
-					|| getHeldItem.getItem() != Items.stone_pickaxe
-					|| getHeldItem == null
-					|| getHeldItem.getItem() != Items.wooden_pickaxe) {
+			} else {
 
 			}
 		}
@@ -214,15 +183,7 @@ public class SimplyPathsEventHandler {
 
 		if (event.action == PlayerInteractEvent.Action.RIGHT_CLICK_BLOCK) {
 			if (getHeldItem != null
-					&& getHeldItem.getItem() == Items.diamond_axe
-					|| getHeldItem != null
-					&& getHeldItem.getItem() == Items.golden_axe
-					|| getHeldItem != null
-					&& getHeldItem.getItem() == Items.iron_axe
-					|| getHeldItem != null
-					&& getHeldItem.getItem() == Items.stone_axe
-					|| getHeldItem != null
-					&& getHeldItem.getItem() == Items.wooden_axe) {
+					&& getHeldItem.getItem() instanceof ItemAxe) {
 				if (event.world.blockExists(event.x, event.y, event.z)
 						&& event.world.getBlock(event.x, event.y, event.z) == Blocks.planks) {
 					getHeldItem.damageItem(1, event.entityPlayer);
@@ -267,16 +228,7 @@ public class SimplyPathsEventHandler {
 
 				}
 
-			} else if (getHeldItem == null
-					|| getHeldItem.getItem() != Items.diamond_axe
-					|| getHeldItem == null
-					|| getHeldItem.getItem() != Items.golden_axe
-					|| getHeldItem == null
-					|| getHeldItem.getItem() != Items.iron_axe
-					|| getHeldItem == null
-					|| getHeldItem.getItem() != Items.stone_axe
-					|| getHeldItem == null
-					|| getHeldItem.getItem() != Items.wooden_axe) {
+			} else {
 
 			}
 		}
