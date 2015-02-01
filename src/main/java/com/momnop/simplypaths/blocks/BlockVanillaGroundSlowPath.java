@@ -6,8 +6,10 @@ import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -28,8 +30,9 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockVanillaGroundSlowPath extends Block {
-	public BlockVanillaGroundSlowPath(String unlocalizedName, String textureName,
-			String soundType, float hardness, int harvestLevel, String toolType) {
+	public BlockVanillaGroundSlowPath(String unlocalizedName,
+			String textureName, String soundType, float hardness,
+			int harvestLevel, String toolType) {
 		super(Material.ground);
 		setCreativeTab(SimplyPathsCreativeTab.INSTANCE);
 		setBlockBounds(0F, 0F, 0F, 1F, 15F / 16F, 1F);
@@ -68,19 +71,22 @@ public class BlockVanillaGroundSlowPath extends Block {
 
 		}
 	}
-	
+
 	@Override
-	public void onEntityCollidedWithBlock(World world, int x, int y, int z, Entity entity) {
-		EntityPlayer p = (EntityPlayer)entity;
-		
-		p.motionX *= 0.4D;
-        p.motionZ *= 0.4D;
+	public void onEntityCollidedWithBlock(World world, int x, int y, int z,
+			Entity entity) {
+		if (entity instanceof EntityLiving) {
+			EntityLiving p = (EntityLiving) entity;
+			p.motionX *= 0.4D;
+			p.motionZ *= 0.4D;
+		}
 	}
 
 	@Override
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World world, int x,
 			int y, int z) {
-		return AxisAlignedBB.getBoundingBox(x, y, z, x + 1, y + (15F / 16F), z + 1);
+		return AxisAlignedBB.getBoundingBox(x, y, z, x + 1, y + (15F / 16F),
+				z + 1);
 	}
 
 	@Override
