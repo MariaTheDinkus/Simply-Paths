@@ -19,9 +19,9 @@ public class RecipeHandler
      */
     public static void doRecipes()
     {
-    	GameRegistry.addRecipe(new ItemStack(SimplyPathsBlocks.blockSlowMovingPath, 6), new Object[] {"XXX", "GSG", 'X', Blocks.rail, 'G', Items.iron_ingot});
-    	GameRegistry.addRecipe(new ItemStack(SimplyPathsBlocks.blockFastMovingPath, 6), new Object[] {"XXX", "GSG", 'X', Blocks.rail, 'G', Items.gold_ingot});
-    	GameRegistry.addRecipe(new ItemStack(SimplyPathsBlocks.blockFastestMovingPath, 6), new Object[] {"XXX", "GSG", 'X', Blocks.rail, 'G', Items.diamond});
+    	GameRegistry.addRecipe(new ItemStack(SimplyPathsBlocks.blockSlowMovingPath, 6), new Object[] {"XXX", "GSG", 'X', Blocks.rail, 'G', Items.iron_ingot, 'S', Blocks.stone});
+    	GameRegistry.addRecipe(new ItemStack(SimplyPathsBlocks.blockFastMovingPath, 6), new Object[] {"XXX", "GSG", 'X', Blocks.rail, 'G', Items.gold_ingot, 'S', Blocks.stone});
+    	GameRegistry.addRecipe(new ItemStack(SimplyPathsBlocks.blockFastestMovingPath, 6), new Object[] {"XXX", "GSG", 'X', Blocks.rail, 'G', Items.diamond, 'S', Blocks.stone});
 
     	GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.asphaultBlock, 3), new Object[]{Blocks.stone, Blocks.stone, Blocks.stone, new ItemStack(Items.coal, 1, 1), new ItemStack(Items.coal, 1, 1)});
 		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.whiteLineBlock, 3), new Object[]{Blocks.stone, Blocks.stone, Blocks.stone, new ItemStack(Items.dye, 1, 15)});
