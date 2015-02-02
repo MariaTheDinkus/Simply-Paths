@@ -2,7 +2,6 @@ package com.momnop.simplypaths.events;
 
 import org.lwjgl.opengl.GL11;
 
-import thaumcraft.api.ItemApi;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.EffectRenderer;

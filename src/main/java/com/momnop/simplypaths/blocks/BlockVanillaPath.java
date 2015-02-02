@@ -21,21 +21,23 @@ import net.minecraftforge.common.util.ForgeDirection;
 
 import com.momnop.simplypaths.SimplyPaths;
 import com.momnop.simplypaths.SimplyPathsCreativeTab;
+import com.momnop.simplypaths.TextureHelper;
 import com.momnop.simplypaths.info.ModInfo;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockCustomGroundPath extends Block {
-	public BlockCustomGroundPath(String unlocalizedName, String soundType,
-			float hardness, int harvestLevel, String toolType) {
-		super(Material.ground);
+public class BlockVanillaPath extends Block {
+	public BlockVanillaPath(Material material, String unlocalizedName, String textureName,
+			String soundType, float hardness, int harvestLevel, String toolType) {
+		super(material);
 		setCreativeTab(SimplyPathsCreativeTab.INSTANCE);
 		setBlockBounds(0F, 0F, 0F, 1F, 15F / 16F, 1F);
 		setLightOpacity(255);
 		setHardness(hardness);
 		setHarvestLevel(toolType, harvestLevel);
 		setBlockName(unlocalizedName);
+		setBlockTextureName("minecraft:" + textureName);
 		useNeighborBrightness = true;
 
 		if (soundType == "gravel") {
@@ -96,11 +98,12 @@ public class BlockCustomGroundPath extends Block {
 		return false;
 	}
 
-	@Override
-	@SideOnly(Side.CLIENT)
-	public void registerBlockIcons(IIconRegister register) {
-		blockIcon = register.registerIcon(ModInfo.MODID + ":"
-				+ getUnlocalizedName().substring(5));
-	}
+	/*
+	 * @Override
+	 * 
+	 * @SideOnly(Side.CLIENT) public void registerBlockIcons(IIconRegister
+	 * register) { blockIcon = register.registerIcon("minecraft" + ":" +
+	 * textureName); }
+	 */
 
 }

@@ -62,6 +62,9 @@ public class SimplyPathsCreativeTab extends CreativeTabs {
 		addBlock(SimplyPathsBlocks.blockJunglePlankPath);
 		addBlock(SimplyPathsBlocks.blockAcaciaPlankPath);
 		addBlock(SimplyPathsBlocks.blockDarkOakPlankPath);
+		addBlock(SimplyPathsBlocks.blockSlowMovingPath);
+		addBlock(SimplyPathsBlocks.blockFastMovingPath);
+		addBlock(SimplyPathsBlocks.blockFastestMovingPath);
 	}
 
 	private void addItem(Item item) {
