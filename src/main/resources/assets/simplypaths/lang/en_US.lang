@@ -28,3 +28,6 @@ tile.blockBirchPlankPath.name=Birch Plank Path
 tile.blockJunglePlankPath.name=Jungle Plank Path
 tile.blockAcaciaPlankPath.name=Acacia Plank Path
 tile.blockDarkOakPlankPath.name=Dark Oak Plank Path
+tile.blockSlowMovingPath.name=Slow Conveyer Path
+tile.blockFastMovingPath.name=Fast Conveyer Path
+tile.blockFastestMovingPath.name=Fastest Conveyer Path

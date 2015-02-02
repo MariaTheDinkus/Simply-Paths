@@ -21,7 +21,7 @@ import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class BlockMovingFastPath extends BlockContainer {
+public class BlockMovingFastPath extends Block {
 
 	@SideOnly(Side.CLIENT)
 	private IIcon pathTop0;
@@ -78,7 +78,7 @@ public class BlockMovingFastPath extends BlockContainer {
 		return AxisAlignedBB.getBoundingBox(x, y, z, x + 1, y + (15F / 16F),
 				z + 1);
 	}
-
+	
 	@Override
 	public boolean isOpaqueCube() {
 		return false;
@@ -151,11 +151,6 @@ public class BlockMovingFastPath extends BlockContainer {
 				+ getUnlocalizedName().substring(5) + "_top2");
 		this.pathTop3 = register.registerIcon(ModInfo.MODID + ":"
 				+ getUnlocalizedName().substring(5) + "_top3");
-	}
-
-	@Override
-	public TileEntity createNewTileEntity(World var1, int var2) {
-		return new TileEntityMovingPath();
 	}
 
 	@Override

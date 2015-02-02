@@ -21,7 +21,7 @@ import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class BlockMovingFastestPath extends BlockContainer {
+public class BlockMovingFastestPath extends Block {
 
 	@SideOnly(Side.CLIENT)
 	private IIcon pathTop0;
@@ -151,11 +151,6 @@ public class BlockMovingFastestPath extends BlockContainer {
 				+ getUnlocalizedName().substring(5) + "_top2");
 		this.pathTop3 = register.registerIcon(ModInfo.MODID + ":"
 				+ getUnlocalizedName().substring(5) + "_top3");
-	}
-
-	@Override
-	public TileEntity createNewTileEntity(World var1, int var2) {
-		return new TileEntityMovingPath();
 	}
 
 	@Override
