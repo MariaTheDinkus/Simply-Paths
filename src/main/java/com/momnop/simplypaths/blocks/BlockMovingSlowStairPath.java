@@ -1,23 +1,25 @@
 package com.momnop.simplypaths.blocks;
 
-import net.minecraft.block.Block;
+import net.minecraft.block.BlockStairs;
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
 import com.momnop.simplypaths.SimplyPathsCreativeTab;
+import com.momnop.simplypaths.blocks.tiles.TileEntitySlowMovingStair;
 import com.momnop.simplypaths.info.ModInfo;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockMovingSlowPath extends Block {
+public class BlockMovingSlowStairPath extends BlockStairs implements ITileEntityProvider {
 
 	@SideOnly(Side.CLIENT)
 	private IIcon pathTop0;
@@ -27,12 +29,11 @@ public class BlockMovingSlowPath extends Block {
 	private IIcon pathTop2;
 	@SideOnly(Side.CLIENT)
 	private IIcon pathTop3;
-
-	public BlockMovingSlowPath(Material material, String unlocalizedName, String soundType,
+	
+	public BlockMovingSlowStairPath(Material material, String unlocalizedName, String soundType,
 			float hardness, int harvestLevel, String toolType) {
-		super(material);
+		super(Blocks.stone, harvestLevel);
 		setCreativeTab(SimplyPathsCreativeTab.INSTANCE);
-		setBlockBounds(0F, 0F, 0F, 1F, 15F / 16F, 1F);
 		setLightOpacity(255);
 		setHardness(hardness);
 		setHarvestLevel(toolType, harvestLevel);
@@ -67,14 +68,7 @@ public class BlockMovingSlowPath extends Block {
 
 		}
 	}
-	
-	@Override
-	public AxisAlignedBB getCollisionBoundingBoxFromPool(World world, int x,
-			int y, int z) {
-		return AxisAlignedBB.getBoundingBox(x, y, z, x + 1, y + (15F / 16F),
-				z + 1);
-	}
-	
+
 	@Override
 	public boolean isOpaqueCube() {
 		return false;
@@ -87,13 +81,13 @@ public class BlockMovingSlowPath extends Block {
 	@Override
 	public IIcon getIcon(int side, int meta) {
 		if (meta == 0 && side == 1)
-			return pathTop0;
-		if (meta == 1 && side == 1)
 			return pathTop1;
 		if (meta == 2 && side == 1)
 			return pathTop2;
-		if (meta == 3 && side == 1)
+		if (meta == 1 && side == 1)
 			return pathTop3;
+		if (meta == 3 && side == 1)
+			return pathTop0;
 		return blockIcon;
 	}
 
@@ -110,39 +104,34 @@ public class BlockMovingSlowPath extends Block {
 				+ "conveyorPath" + "_top3");
 	}
 
-	@Override
-	public void onEntityCollidedWithBlock(World world, int x, int y, int z,
-			Entity entity) {
-		Entity p = entity;
-		p.stepHeight = 0.6F;
-		if (world.getBlockMetadata(x, y, z) == 0) {
-			p.motionZ += -0.2F;
-			if (p.motionZ < -0.2F) {
-				p.motionZ = -0.2F;
-			}
-		} else if (world.getBlockMetadata(x, y, z) == 1) {
-			p.motionX += 0.2F;
-			if (p.motionX > 0.2F) {
-				p.motionX = 0.2F;
-			}
-		} else if (world.getBlockMetadata(x, y, z) == 2) {
-			p.motionZ += 0.2F;
-			if (p.motionZ > 0.2F) {
-				p.motionZ = 0.2F;
-			}
-		} else if (world.getBlockMetadata(x, y, z) == 3) {
-			p.motionX += -0.2F;
-			if (p.motionX < -0.2F) {
-				p.motionX = -0.2F;
-			}
-		}
-	}
+	public void onBlockPlacedBy(World p_149689_1_, int p_149689_2_, int p_149689_3_, int p_149689_4_, EntityLivingBase p_149689_5_, ItemStack p_149689_6_)
+    {
+        int l = MathHelper.floor_double((double)(p_149689_5_.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+        int i1 = p_149689_1_.getBlockMetadata(p_149689_2_, p_149689_3_, p_149689_4_) & 4;
 
+        if (l == 0)
+        {
+            p_149689_1_.setBlockMetadataWithNotify(p_149689_2_, p_149689_3_, p_149689_4_, 2 | i1, 2);
+        }
+
+        if (l == 1)
+        {
+            p_149689_1_.setBlockMetadataWithNotify(p_149689_2_, p_149689_3_, p_149689_4_, 1 | i1, 2);
+        }
+
+        if (l == 2)
+        {
+            p_149689_1_.setBlockMetadataWithNotify(p_149689_2_, p_149689_3_, p_149689_4_, 3 | i1, 2);
+        }
+
+        if (l == 3)
+        {
+            p_149689_1_.setBlockMetadataWithNotify(p_149689_2_, p_149689_3_, p_149689_4_, 0 | i1, 2);
+        }
+    }
+	
 	@Override
-	public void onBlockPlacedBy(World par1World, int par2, int par3, int par4,
-			EntityLivingBase par5EntityLiving, ItemStack par6ItemStack) {
-		int l = MathHelper
-				.floor_double((double) (par5EntityLiving.rotationYaw * 4.0F / 360.0F) + 2.5D) & 3;
-		par1World.setBlockMetadataWithNotify(par2, par3, par4, l, 2);
+	public TileEntity createNewTileEntity(World p_149915_1_, int p_149915_2_) {
+		return new TileEntitySlowMovingStair();
 	}
 }

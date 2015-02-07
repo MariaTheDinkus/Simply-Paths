@@ -17,7 +17,7 @@ import com.momnop.simplypaths.info.ModInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockMovingSlowPath extends Block {
+public class BlockRotating extends Block {
 
 	@SideOnly(Side.CLIENT)
 	private IIcon pathTop0;
@@ -27,17 +27,23 @@ public class BlockMovingSlowPath extends Block {
 	private IIcon pathTop2;
 	@SideOnly(Side.CLIENT)
 	private IIcon pathTop3;
+	
+	@SideOnly(Side.CLIENT)
+	private String nameTexture;
+	@SideOnly(Side.CLIENT)
+	private String nameSide;
 
-	public BlockMovingSlowPath(Material material, String unlocalizedName, String soundType,
-			float hardness, int harvestLevel, String toolType) {
+	public BlockRotating(Material material, String unlocalizedName, String soundType,
+			float hardness, int harvestLevel, String toolType, String textureName, String textureSide) {
 		super(material);
 		setCreativeTab(SimplyPathsCreativeTab.INSTANCE);
-		setBlockBounds(0F, 0F, 0F, 1F, 15F / 16F, 1F);
 		setLightOpacity(255);
 		setHardness(hardness);
 		setHarvestLevel(toolType, harvestLevel);
 		setBlockName(unlocalizedName);
 		useNeighborBrightness = true;
+		nameTexture = textureName;
+		nameSide = textureSide;
 
 		if (soundType == "gravel") {
 			setStepSound(soundTypeGravel);
@@ -69,13 +75,6 @@ public class BlockMovingSlowPath extends Block {
 	}
 	
 	@Override
-	public AxisAlignedBB getCollisionBoundingBoxFromPool(World world, int x,
-			int y, int z) {
-		return AxisAlignedBB.getBoundingBox(x, y, z, x + 1, y + (15F / 16F),
-				z + 1);
-	}
-	
-	@Override
 	public boolean isOpaqueCube() {
 		return false;
 	}
@@ -99,43 +98,16 @@ public class BlockMovingSlowPath extends Block {
 
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister register) {
-		this.blockIcon = register.registerIcon("iron_block");
+		this.blockIcon = register.registerIcon(ModInfo.MODID + ":"
+				+ nameSide);
 		this.pathTop0 = register.registerIcon(ModInfo.MODID + ":"
-				+ "conveyorPath" + "_top0");
+				+ nameTexture + "_top0");
 		this.pathTop1 = register.registerIcon(ModInfo.MODID + ":"
-				+ "conveyorPath" + "_top1");
+				+ nameTexture + "_top1");
 		this.pathTop2 = register.registerIcon(ModInfo.MODID + ":"
-				+ "conveyorPath" + "_top2");
+				+ nameTexture + "_top2");
 		this.pathTop3 = register.registerIcon(ModInfo.MODID + ":"
-				+ "conveyorPath" + "_top3");
-	}
-
-	@Override
-	public void onEntityCollidedWithBlock(World world, int x, int y, int z,
-			Entity entity) {
-		Entity p = entity;
-		p.stepHeight = 0.6F;
-		if (world.getBlockMetadata(x, y, z) == 0) {
-			p.motionZ += -0.2F;
-			if (p.motionZ < -0.2F) {
-				p.motionZ = -0.2F;
-			}
-		} else if (world.getBlockMetadata(x, y, z) == 1) {
-			p.motionX += 0.2F;
-			if (p.motionX > 0.2F) {
-				p.motionX = 0.2F;
-			}
-		} else if (world.getBlockMetadata(x, y, z) == 2) {
-			p.motionZ += 0.2F;
-			if (p.motionZ > 0.2F) {
-				p.motionZ = 0.2F;
-			}
-		} else if (world.getBlockMetadata(x, y, z) == 3) {
-			p.motionX += -0.2F;
-			if (p.motionX < -0.2F) {
-				p.motionX = -0.2F;
-			}
-		}
+				+ nameTexture + "_top3");
 	}
 
 	@Override

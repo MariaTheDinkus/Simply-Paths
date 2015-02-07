@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.EffectRenderer;
 import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -15,6 +16,8 @@ import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.MathHelper;
+import net.minecraft.world.World;
 import net.minecraftforge.client.event.DrawBlockHighlightEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.event.entity.EntityEvent.EntityConstructing;
@@ -23,8 +26,8 @@ import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent.BreakSpeed;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 
-import com.momnop.breakcancel.config.ConfigHandler;
-import com.momnop.breakcancel.proxies.CommonProxy;
+import com.momnop.simplypaths.config.ConfigHandler;
+import com.momnop.simplypaths.items.SimplyPathsItems;
 import com.momnop.simplypaths.blocks.SimplyPathsBlocks;
 
 import cpw.mods.fml.client.event.ConfigChangedEvent;
@@ -33,6 +36,7 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerRespawnEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
+import cpw.mods.fml.common.gameevent.TickEvent.PlayerTickEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -40,13 +44,23 @@ public class SimplyPathsEventHandler {
 
 	EntityPlayer player;
 
+	public Block findBlockUnderEntity(World parWorld, Entity parEntity) {
+		return parWorld.getBlock(
+				MathHelper.floor_double(parEntity.posX),
+				MathHelper.floor_double(parEntity.posY - 0.20000000298023224D
+						- (double) parEntity.yOffset),
+				MathHelper.floor_double(parEntity.posZ));
+	}
+
 	@SubscribeEvent
 	public void onPlayerInteractShovel(PlayerInteractEvent event) {
 		ItemStack getHeldItem = event.entityPlayer.getCurrentEquippedItem();
-		
+
 		if (event.action == PlayerInteractEvent.Action.RIGHT_CLICK_BLOCK) {
 			if (getHeldItem != null
-					&& getHeldItem.getItem() instanceof ItemSpade) {
+					&& getHeldItem.getItem() instanceof ItemSpade
+					|| getHeldItem != null && ConfigHandler.pathChisel == true
+					&& getHeldItem.getItem() == SimplyPathsItems.pathChisel) {
 				if (event.world.blockExists(event.x, event.y, event.z)
 						&& event.world.getBlock(event.x, event.y, event.z) == Blocks.grass) {
 					getHeldItem.damageItem(1, event.entityPlayer);
@@ -100,7 +114,9 @@ public class SimplyPathsEventHandler {
 
 		if (event.action == PlayerInteractEvent.Action.RIGHT_CLICK_BLOCK) {
 			if (getHeldItem != null
-					&& getHeldItem.getItem() instanceof ItemPickaxe) {
+					&& getHeldItem.getItem() instanceof ItemPickaxe
+					|| getHeldItem != null && ConfigHandler.pathChisel == true
+					&& getHeldItem.getItem() == SimplyPathsItems.pathChisel) {
 				if (event.world.blockExists(event.x, event.y, event.z)
 						&& event.world.getBlock(event.x, event.y, event.z) == Blocks.stone) {
 					getHeldItem.damageItem(1, event.entityPlayer);
@@ -181,8 +197,9 @@ public class SimplyPathsEventHandler {
 		ItemStack getHeldItem = event.entityPlayer.getCurrentEquippedItem();
 
 		if (event.action == PlayerInteractEvent.Action.RIGHT_CLICK_BLOCK) {
-			if (getHeldItem != null
-					&& getHeldItem.getItem() instanceof ItemAxe) {
+			if (getHeldItem != null && getHeldItem.getItem() instanceof ItemAxe
+					|| getHeldItem != null && ConfigHandler.pathChisel == true
+					&& getHeldItem.getItem() == SimplyPathsItems.pathChisel) {
 				if (event.world.blockExists(event.x, event.y, event.z)
 						&& event.world.getBlock(event.x, event.y, event.z) == Blocks.planks) {
 					getHeldItem.damageItem(1, event.entityPlayer);

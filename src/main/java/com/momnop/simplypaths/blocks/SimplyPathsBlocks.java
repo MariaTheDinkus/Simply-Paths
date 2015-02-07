@@ -12,8 +12,9 @@ import net.minecraft.item.ItemStack;
 
 public class SimplyPathsBlocks
 {
-	public static Block blockSlowMovingPath, blockFastMovingPath, blockFastestMovingPath;
+	public static Block blockSlowMovingPath, blockFastMovingPath, blockFastestMovingPath, blockSlowMovingStairPath, blockFastMovingStairPath, blockFastestMovingStairPath;
 	public static Block asphaultBlock, whiteLineBlock, yellowLineBlock;
+	public static Block blockAsphaultWhitePath, blockAsphaultYellowPath, blockAsphaultWhiteCornerPath;
 	public static Block blockPath, blockDirtPath, blockClayPath, blockGravelPath, blockSandPath, blockSoulSandPath, blockPodzolPath;
     public static Block blockAsphaultPath, blockWhiteLinePath, blockYellowLinePath, blockSandstonePath, blockCobblestonePath, blockStonePath, blockStoneBrickPath, blockQuartzPath, blockChiselledQuartzPath, blockPillarQuartzPath, blockNetherrackPath, blockGlowstonePath;
     public static Block blockOakPlankPath, blockSprucePlankPath, blockBirchPlankPath, blockJunglePlankPath, blockAcaciaPlankPath, blockDarkOakPlankPath;
@@ -26,6 +27,9 @@ public class SimplyPathsBlocks
     	blockAsphaultPath = new BlockCustomPath(Material.rock, BlockInfo.ASPHAULT_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
     	blockWhiteLinePath = new BlockCustomPath(Material.rock, BlockInfo.WHITE_LINE_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
     	blockYellowLinePath = new BlockCustomPath(Material.rock, BlockInfo.YELLOW_LINE_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
+    	blockAsphaultWhitePath = new BlockRotatingPath(Material.rock, BlockInfo.ASPHAULT_WHITE_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe", "asphaultWhite", "asphaultBlock");
+    	blockAsphaultYellowPath = new BlockRotatingPath(Material.rock, BlockInfo.ASPHAULT_YELLOW_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe", "asphaultYellow", "asphaultBlock");
+    	blockAsphaultWhiteCornerPath = new BlockRotatingPath(Material.rock, BlockInfo.ASPHAULT_WHITE_CORNER_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe", "asphaultWhiteCorner", "asphaultBlock");
     	blockDirtPath = new BlockVanillaPath(Material.ground, BlockInfo.DIRT_PATH_UNLOCALIZED_NAME, "dirt", "gravel", 0.6F, 0, "shovel");
     	blockClayPath = new BlockVanillaPath(Material.ground, BlockInfo.CLAY_PATH_UNLOCALIZED_NAME, "clay", "gravel", 0.6F, 0, "shovel");
     	blockGravelPath = new BlockVanillaPath(Material.ground, BlockInfo.GRAVEL_PATH_UNLOCALIZED_NAME, "gravel", "gravel", 0.6F, 0, "shovel");
@@ -51,12 +55,19 @@ public class SimplyPathsBlocks
         blockSlowMovingPath = new BlockMovingSlowPath(Material.rock, BlockInfo.SLOW_MOVING_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
         blockFastMovingPath = new BlockMovingFastPath(Material.rock, BlockInfo.FAST_MOVING_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
         blockFastestMovingPath = new BlockMovingFastestPath(Material.rock, BlockInfo.FASTEST_MOVING_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
-        
+              
+        blockSlowMovingStairPath = new BlockMovingSlowStairPath(Material.rock, BlockInfo.SLOW_MOVING_STAIR_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
+        blockFastMovingStairPath = new BlockMovingFastStairPath(Material.rock, BlockInfo.FAST_MOVING_STAIR_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
+        blockFastestMovingStairPath = new BlockMovingFastestStairPath(Material.rock, BlockInfo.FASTEST_MOVING_STAIR_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
+                
         GameRegistry.registerBlock(asphaultBlock, "DecorMod_asphaultBlock");
         GameRegistry.registerBlock(whiteLineBlock, "DecorMod_whiteLineBlock");
         GameRegistry.registerBlock(yellowLineBlock, "DecorMod_yellowLineBlock");
         GameRegistry.registerBlock(blockPath, "DecorMod_blockPath");
         GameRegistry.registerBlock(blockAsphaultPath, "DecorMod_blockAsphaultPath");
+        GameRegistry.registerBlock(blockAsphaultWhitePath, "DecorMod_blockAsphaultWhitePath");
+        GameRegistry.registerBlock(blockAsphaultYellowPath, "DecorMod_blockAsphaultYellowPath");
+        GameRegistry.registerBlock(blockAsphaultWhiteCornerPath, "DecorMod_blockAsphaultWhiteCornerPath");
         GameRegistry.registerBlock(blockWhiteLinePath, "DecorMod_blockWhiteLinePath");
         GameRegistry.registerBlock(blockYellowLinePath, "DecorMod_blockYellowLinePath");
         GameRegistry.registerBlock(blockDirtPath, "DecorMod_blockDirtPath");
@@ -84,5 +95,9 @@ public class SimplyPathsBlocks
         GameRegistry.registerBlock(blockSlowMovingPath, "DecorMod_blockSlowMovingPath");
         GameRegistry.registerBlock(blockFastMovingPath, "DecorMod_blockFastMovingPath");
         GameRegistry.registerBlock(blockFastestMovingPath, "DecorMod_blockFastestMovingPath");
+        
+        GameRegistry.registerBlock(blockSlowMovingStairPath, "DecorMod_blockSlowMovingStairPath");
+        GameRegistry.registerBlock(blockFastMovingStairPath, "DecorMod_blockFastMovingStairPath");
+        GameRegistry.registerBlock(blockFastestMovingStairPath, "DecorMod_blockFastestMovingStairPath");
     }
 }

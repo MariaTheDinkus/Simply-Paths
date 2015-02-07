@@ -1,21 +1,23 @@
 package com.momnop.simplypaths;
 
 import java.util.List;
+import java.util.Random;
 
 import com.momnop.simplypaths.blocks.SimplyPathsBlocks;
+import com.momnop.simplypaths.config.ConfigHandler;
 import com.momnop.simplypaths.info.ModInfo;
+import com.momnop.simplypaths.items.SimplyPathsItems;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-
 public class SimplyPathsCreativeTab extends CreativeTabs {
-	
+
 	List list;
 	public static SimplyPathsCreativeTab INSTANCE = new SimplyPathsCreativeTab();
-	
+
 	public SimplyPathsCreativeTab() {
 		super(ModInfo.MODID);
 	}
@@ -34,6 +36,9 @@ public class SimplyPathsCreativeTab extends CreativeTabs {
 	public void displayAllReleventItems(List list) {
 		this.list = list;
 		
+		if (ConfigHandler.pathChisel == true) {
+		addItem(SimplyPathsItems.pathChisel);
+		}
 		addBlock(SimplyPathsBlocks.asphaultBlock);
 		addBlock(SimplyPathsBlocks.whiteLineBlock);
 		addBlock(SimplyPathsBlocks.yellowLineBlock);
@@ -47,9 +52,6 @@ public class SimplyPathsCreativeTab extends CreativeTabs {
 		addBlock(SimplyPathsBlocks.blockCobblestonePath);
 		addBlock(SimplyPathsBlocks.blockStonePath);
 		addBlock(SimplyPathsBlocks.blockStoneBrickPath);
-		addBlock(SimplyPathsBlocks.blockAsphaultPath);
-		addBlock(SimplyPathsBlocks.blockWhiteLinePath);
-		addBlock(SimplyPathsBlocks.blockYellowLinePath);
 		addBlock(SimplyPathsBlocks.blockQuartzPath);
 		addBlock(SimplyPathsBlocks.blockChiselledQuartzPath);
 		addBlock(SimplyPathsBlocks.blockPillarQuartzPath);
@@ -62,9 +64,18 @@ public class SimplyPathsCreativeTab extends CreativeTabs {
 		addBlock(SimplyPathsBlocks.blockJunglePlankPath);
 		addBlock(SimplyPathsBlocks.blockAcaciaPlankPath);
 		addBlock(SimplyPathsBlocks.blockDarkOakPlankPath);
+		addBlock(SimplyPathsBlocks.blockAsphaultPath);
+		addBlock(SimplyPathsBlocks.blockAsphaultWhitePath);
+		addBlock(SimplyPathsBlocks.blockAsphaultYellowPath);
+		addBlock(SimplyPathsBlocks.blockAsphaultWhiteCornerPath);
+		addBlock(SimplyPathsBlocks.blockWhiteLinePath);
+		addBlock(SimplyPathsBlocks.blockYellowLinePath);
 		addBlock(SimplyPathsBlocks.blockSlowMovingPath);
 		addBlock(SimplyPathsBlocks.blockFastMovingPath);
 		addBlock(SimplyPathsBlocks.blockFastestMovingPath);
+		addBlock(SimplyPathsBlocks.blockSlowMovingStairPath);
+		addBlock(SimplyPathsBlocks.blockFastMovingStairPath);
+		addBlock(SimplyPathsBlocks.blockFastestMovingStairPath);
 	}
 
 	private void addItem(Item item) {

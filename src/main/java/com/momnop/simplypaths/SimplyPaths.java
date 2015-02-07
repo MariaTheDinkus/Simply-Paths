@@ -6,9 +6,11 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 
+import com.momnop.simplypaths.config.ConfigHandler;
 import com.momnop.simplypaths.blocks.SimplyPathsBlocks;
 import com.momnop.simplypaths.events.SimplyPathsEventHandler;
 import com.momnop.simplypaths.info.ModInfo;
+import com.momnop.simplypaths.items.SimplyPathsItems;
 import com.momnop.simplypaths.proxies.CommonProxy;
 import com.momnop.simplypaths.recipes.RecipeHandler;
 
@@ -32,14 +34,16 @@ public class SimplyPaths
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
+    	ConfigHandler.init(event.getSuggestedConfigurationFile());
         SimplyPathsBlocks.load();
+        SimplyPathsItems.load();
         proxy.initRenders();
         RecipeHandler.doRecipes();
     }
     
     @EventHandler
     public void init(FMLInitializationEvent event)
-    {	
+    {
     	FMLCommonHandler.instance().bus().register(new SimplyPathsEventHandler());
         MinecraftForge.EVENT_BUS.register(new SimplyPathsEventHandler());
     }

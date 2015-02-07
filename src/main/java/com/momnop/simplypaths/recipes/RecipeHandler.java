@@ -1,6 +1,8 @@
 package com.momnop.simplypaths.recipes;
 
 import com.momnop.simplypaths.blocks.SimplyPathsBlocks;
+import com.momnop.simplypaths.config.ConfigHandler;
+import com.momnop.simplypaths.items.SimplyPathsItems;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
@@ -22,10 +24,18 @@ public class RecipeHandler
     	GameRegistry.addRecipe(new ItemStack(SimplyPathsBlocks.blockSlowMovingPath, 6), new Object[] {"XXX", "GSG", 'X', Blocks.rail, 'G', Items.iron_ingot, 'S', Blocks.stone});
     	GameRegistry.addRecipe(new ItemStack(SimplyPathsBlocks.blockFastMovingPath, 6), new Object[] {"XXX", "GSG", 'X', Blocks.rail, 'G', Items.gold_ingot, 'S', Blocks.stone});
     	GameRegistry.addRecipe(new ItemStack(SimplyPathsBlocks.blockFastestMovingPath, 6), new Object[] {"XXX", "GSG", 'X', Blocks.rail, 'G', Items.diamond, 'S', Blocks.stone});
+    	
+    	GameRegistry.addRecipe(new ItemStack(SimplyPathsBlocks.blockSlowMovingStairPath, 6), new Object[] {"X  ", "XX ", "XXX", 'X', SimplyPathsBlocks.blockSlowMovingPath});
+    	GameRegistry.addRecipe(new ItemStack(SimplyPathsBlocks.blockFastMovingStairPath, 6), new Object[] {"X  ", "XX ", "XXX", 'X', SimplyPathsBlocks.blockFastMovingPath});
+    	GameRegistry.addRecipe(new ItemStack(SimplyPathsBlocks.blockFastestMovingStairPath, 6), new Object[] {"X  ", "XX ", "XXX", 'X', SimplyPathsBlocks.blockFastestMovingPath});
 
     	GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.asphaultBlock, 3), new Object[]{Blocks.stone, Blocks.stone, Blocks.stone, new ItemStack(Items.coal, 1, 1), new ItemStack(Items.coal, 1, 1)});
 		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.whiteLineBlock, 3), new Object[]{Blocks.stone, Blocks.stone, Blocks.stone, new ItemStack(Items.dye, 1, 15)});
 		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.yellowLineBlock, 3), new Object[]{Blocks.stone, Blocks.stone, Blocks.stone, new ItemStack(Items.dye, 1, 11)});
+		
+		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.blockAsphaultPath, 1), new Object[]{SimplyPathsBlocks.blockAsphaultWhitePath});
+		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.blockAsphaultPath, 1), new Object[]{SimplyPathsBlocks.blockAsphaultYellowPath});
+		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.blockAsphaultPath, 1), new Object[]{SimplyPathsBlocks.blockAsphaultWhiteCornerPath});
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.dirt, 1), new Object[]{SimplyPathsBlocks.blockDirtPath});
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.dirt, 1, 2), new Object[]{SimplyPathsBlocks.blockPodzolPath});
@@ -51,7 +61,15 @@ public class RecipeHandler
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.clay, 1), new Object[]{SimplyPathsBlocks.blockClayPath});
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.sand, 1), new Object[]{SimplyPathsBlocks.blockSandPath});
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.sandstone, 1), new Object[]{SimplyPathsBlocks.blockSandstonePath});
-
+		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.blockAsphaultWhitePath, 3), new Object[]{SimplyPathsBlocks.blockAsphaultPath, SimplyPathsBlocks.blockAsphaultPath, SimplyPathsBlocks.blockAsphaultPath, new ItemStack(Items.dye, 1, 15)});
+		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.blockAsphaultYellowPath, 3), new Object[]{SimplyPathsBlocks.blockAsphaultPath, SimplyPathsBlocks.blockAsphaultPath, SimplyPathsBlocks.blockAsphaultPath, new ItemStack(Items.dye, 1, 11)});
+		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.blockAsphaultWhiteCornerPath, 3), new Object[]{SimplyPathsBlocks.blockAsphaultWhitePath, SimplyPathsBlocks.blockAsphaultWhitePath, SimplyPathsBlocks.blockAsphaultWhitePath, new ItemStack(Items.dye, 1, 15)});
+    }
+    
+    public static void addPathChiselRecipe() {
+    	if (ConfigHandler.pathChisel == true) {
+    		GameRegistry.addRecipe(new ItemStack(SimplyPathsItems.pathChisel, 1), new Object[] {"S  ", " I ", "   I", 'S', Items.stick, 'I', Items.iron_ingot});
+    	}
     }
 
 }

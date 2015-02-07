@@ -1,7 +1,6 @@
 package com.momnop.simplypaths.blocks;
 
 import com.momnop.simplypaths.SimplyPathsCreativeTab;
-import com.momnop.simplypaths.blocks.tiles.TileEntityMovingPath;
 import com.momnop.simplypaths.info.ModInfo;
 
 import cpw.mods.fml.relauncher.Side;
@@ -84,45 +83,6 @@ public class BlockMovingFastestPath extends Block {
 		return false;
 	}
 
-	public void onBlockAdded(World world, int x, int y, int z) {
-		super.onBlockAdded(world, x, y, z);
-		this.setDefaultDirection(world, x, y, z);
-	}
-
-	private void setDefaultDirection(World p_149930_1_, int p_149930_2_,
-			int p_149930_3_, int p_149930_4_) {
-		if (!p_149930_1_.isRemote) {
-			Block block = p_149930_1_.getBlock(p_149930_2_, p_149930_3_,
-					p_149930_4_ - 1);
-			Block block1 = p_149930_1_.getBlock(p_149930_2_, p_149930_3_,
-					p_149930_4_ + 1);
-			Block block2 = p_149930_1_.getBlock(p_149930_2_ - 1, p_149930_3_,
-					p_149930_4_);
-			Block block3 = p_149930_1_.getBlock(p_149930_2_ + 1, p_149930_3_,
-					p_149930_4_);
-			byte b0 = 3;
-
-			if (block.func_149730_j() && !block1.func_149730_j()) {
-				b0 = 3;
-			}
-
-			if (block1.func_149730_j() && !block.func_149730_j()) {
-				b0 = 2;
-			}
-
-			if (block2.func_149730_j() && !block3.func_149730_j()) {
-				b0 = 5;
-			}
-
-			if (block3.func_149730_j() && !block2.func_149730_j()) {
-				b0 = 4;
-			}
-
-			p_149930_1_.setBlockMetadataWithNotify(p_149930_2_, p_149930_3_,
-					p_149930_4_, b0, 2);
-		}
-	}
-
 	/**
 	 * Gets the block's texture. Args: side, meta
 	 */
@@ -144,20 +104,20 @@ public class BlockMovingFastestPath extends Block {
 	public void registerBlockIcons(IIconRegister register) {
 		this.blockIcon = register.registerIcon("diamond_block");
 		this.pathTop0 = register.registerIcon(ModInfo.MODID + ":"
-				+ getUnlocalizedName().substring(5) + "_top0");
+				+ "conveyorPath" + "_top0");
 		this.pathTop1 = register.registerIcon(ModInfo.MODID + ":"
-				+ getUnlocalizedName().substring(5) + "_top1");
+				+ "conveyorPath" + "_top1");
 		this.pathTop2 = register.registerIcon(ModInfo.MODID + ":"
-				+ getUnlocalizedName().substring(5) + "_top2");
+				+ "conveyorPath" + "_top2");
 		this.pathTop3 = register.registerIcon(ModInfo.MODID + ":"
-				+ getUnlocalizedName().substring(5) + "_top3");
+				+ "conveyorPath" + "_top3");
 	}
 
 	@Override
 	public void onEntityCollidedWithBlock(World world, int x, int y, int z,
 			Entity entity) {
 		Entity p = entity;
-		p.stepHeight = 1.0F;
+		p.stepHeight = 0.6F;
 		if (world.getBlockMetadata(x, y, z) == 0) {
 			p.motionZ += -0.65F;
 			if (p.motionZ < -0.65F) {
