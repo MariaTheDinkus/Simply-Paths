@@ -1,6 +1,7 @@
 itemGroup.simplypaths=Simply Paths
 
 item.pathChisel.name=Path Chisel
+item.conveyorWrench.name=Conveyor Wrench
 
 tile.asphaultBlock.name=Block of Asphault
 tile.whiteLineBlock.name=White Colored Stone

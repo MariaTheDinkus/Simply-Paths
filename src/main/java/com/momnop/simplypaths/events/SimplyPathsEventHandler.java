@@ -118,7 +118,9 @@ public class SimplyPathsEventHandler {
 					event.world.setBlock(event.x, event.y, event.z,
 							SimplyPathsBlocks.blockPath);
 				} else if (event.world.blockExists(event.x, event.y, event.z)
-						&& event.world.getBlock(event.x, event.y, event.z) == Blocks.dirt) {
+						&& event.world.getBlock(event.x, event.y, event.z) == Blocks.dirt
+						&& event.world.getBlockMetadata(event.x, event.y,
+								event.z) == 0) {
 					getHeldItem.damageItem(1, event.entityPlayer);
 					event.world.setBlock(event.x, event.y, event.z,
 							SimplyPathsBlocks.blockDirtPath);
