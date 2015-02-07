@@ -45,9 +45,7 @@ public class BlockInfo
     public static final String FAST_MOVING_STAIR_PATH_UNLOCALIZED_NAME = "blockFastMovingStairPath";
     public static final String FASTEST_MOVING_STAIR_PATH_UNLOCALIZED_NAME = "blockFastestMovingStairPath";
     
-    public static final String SLOW_MOVING_SLAB_PATH_UNLOCALIZED_NAME = "blockSlowMovingSlabPath";
-    public static final String FAST_MOVING_SLAB_PATH_UNLOCALIZED_NAME = "blockFastMovingSlabPath";
-    public static final String FASTEST_MOVING_SLAB_PATH_UNLOCALIZED_NAME = "blockFastestMovingSlabPath";
-    
-    public static final String FASTEST_MOVING_DOUBLE_SLAB_PATH_UNLOCALIZED_NAME = "blockFastestMovingDoubleSlabPath";
+    public static final String SLOW_DOWN_MOVING_STAIR_PATH_UNLOCALIZED_NAME = "blockSlowDownMovingStairPath";
+    public static final String FAST_DOWN_MOVING_STAIR_PATH_UNLOCALIZED_NAME = "blockFastDownMovingStairPath";
+    public static final String FASTEST_DOWN_MOVING_STAIR_PATH_UNLOCALIZED_NAME = "blockFastestDownMovingStairPath";
 }

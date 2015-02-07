@@ -39,3 +39,6 @@ tile.blockFastestMovingPath.name=Fastest Conveyor Path
 tile.blockSlowMovingStairPath.name=Slow Conveyor Ramp
 tile.blockFastMovingStairPath.name=Fast Conveyor Ramp
 tile.blockFastestMovingStairPath.name=Fastest Conveyor Ramp
+tile.blockSlowDownMovingStairPath.name=Slow Conveyor Ramp
+tile.blockFastDownMovingStairPath.name=Fast Conveyor Ramp
+tile.blockFastestDownMovingStairPath.name=Fastest Conveyor Ramp

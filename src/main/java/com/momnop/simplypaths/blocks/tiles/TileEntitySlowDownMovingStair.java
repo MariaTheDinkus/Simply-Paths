@@ -8,7 +8,7 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 
-public class TileEntityFastMovingStair extends TileEntity {
+public class TileEntitySlowDownMovingStair extends TileEntity {
 	
 	@Override
     public void updateEntity()
@@ -23,24 +23,24 @@ public class TileEntityFastMovingStair extends TileEntity {
                 if (entity!= null && entity.onGround && !entity.isInWater())
                 {
                 	if (this.worldObj.getBlockMetadata(x, y, z) == 2) {
-            			entity.motionZ += 0.4F;
-            			if (entity.motionZ > 0.4F) {
-            				entity.motionZ = 0.4F;
+            			entity.motionZ += -0.2F;
+            			if (entity.motionZ < -0.2F) {
+            				entity.motionZ = -0.2F;
             			}
             		} else if (this.worldObj.getBlockMetadata(x, y, z) == 1) {
-            			entity.motionX += -0.4F;
-            			if (entity.motionX < -0.4F) {
-            				entity.motionX = -0.4F;
+            			entity.motionX += 0.2F;
+            			if (entity.motionX > 0.2F) {
+            				entity.motionX = 0.2F;
             			}
             		} else if (this.worldObj.getBlockMetadata(x, y, z) == 0) {
-            			entity.motionX += 0.4F;
-            			if (entity.motionX > 0.4F) {
-            				entity.motionX = 0.4F;
+            			entity.motionX += -0.2F;
+            			if (entity.motionX < -0.2F) {
+            				entity.motionX = -0.2F;
             			}
             		} else if (this.worldObj.getBlockMetadata(x, y, z) == 3) {
-            			entity.motionZ += -0.4F;
-            			if (entity.motionZ < -0.4F) {
-            				entity.motionZ = -0.4F;
+            			entity.motionZ += 0.2F;
+            			if (entity.motionZ > 0.2F) {
+            				entity.motionZ = 0.2F;
             			}
             		}
                 }

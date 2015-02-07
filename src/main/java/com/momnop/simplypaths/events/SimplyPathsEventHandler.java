@@ -8,6 +8,7 @@ import net.minecraft.client.particle.EffectRenderer;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -16,6 +17,8 @@ import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.ChatComponentText;
+import net.minecraft.util.IChatComponent;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.DrawBlockHighlightEvent;
@@ -50,6 +53,54 @@ public class SimplyPathsEventHandler {
 				MathHelper.floor_double(parEntity.posY - 0.20000000298023224D
 						- (double) parEntity.yOffset),
 				MathHelper.floor_double(parEntity.posZ));
+	}
+
+	@SubscribeEvent
+	public void onPlayerInteractStairs(PlayerInteractEvent event) {
+		ItemStack getHeldItem = event.entityPlayer.getCurrentEquippedItem();
+		
+		if (event.action == PlayerInteractEvent.Action.RIGHT_CLICK_BLOCK) {
+			if (getHeldItem != null
+					&& getHeldItem.getItem() == SimplyPathsItems.conveyorWrench) {
+				if (event.world.blockExists(event.x, event.y, event.z)
+						&& event.world.getBlock(event.x, event.y, event.z) == SimplyPathsBlocks.blockSlowMovingStairPath) {
+					event.world.playSoundAtEntity(event.entityPlayer, "random.anvil_use", 0.5f, 1.0f);
+					event.world.setBlock(event.x, event.y, event.z,
+							SimplyPathsBlocks.blockSlowDownMovingStairPath, event.world.getBlockMetadata(event.x, event.y,
+									event.z), 0);
+				} else if (event.world.blockExists(event.x, event.y, event.z)
+						&& event.world.getBlock(event.x, event.y, event.z) == SimplyPathsBlocks.blockSlowDownMovingStairPath) {
+					event.world.playSoundAtEntity(event.entityPlayer, "random.anvil_use", 0.5f, 1.0f);
+					event.world.setBlock(event.x, event.y, event.z,
+							SimplyPathsBlocks.blockSlowMovingStairPath, event.world.getBlockMetadata(event.x, event.y,
+									event.z), 0);
+				} else if (event.world.blockExists(event.x, event.y, event.z)
+						&& event.world.getBlock(event.x, event.y, event.z) == SimplyPathsBlocks.blockFastMovingStairPath) {
+					event.world.playSoundAtEntity(event.entityPlayer, "random.anvil_use", 0.5f, 1.0f);
+					event.world.setBlock(event.x, event.y, event.z,
+							SimplyPathsBlocks.blockFastDownMovingStairPath, event.world.getBlockMetadata(event.x, event.y,
+									event.z), 0);
+				} else if (event.world.blockExists(event.x, event.y, event.z)
+						&& event.world.getBlock(event.x, event.y, event.z) == SimplyPathsBlocks.blockFastDownMovingStairPath) {
+					event.world.playSoundAtEntity(event.entityPlayer, "random.anvil_use", 0.5f, 1.0f);
+					event.world.setBlock(event.x, event.y, event.z,
+							SimplyPathsBlocks.blockFastMovingStairPath, event.world.getBlockMetadata(event.x, event.y,
+									event.z), 0);
+				} else if (event.world.blockExists(event.x, event.y, event.z)
+						&& event.world.getBlock(event.x, event.y, event.z) == SimplyPathsBlocks.blockFastestMovingStairPath) {
+					event.world.playSoundAtEntity(event.entityPlayer, "random.anvil_use", 0.5f, 1.0f);
+					event.world.setBlock(event.x, event.y, event.z,
+							SimplyPathsBlocks.blockFastestDownMovingStairPath, event.world.getBlockMetadata(event.x, event.y,
+									event.z), 0);
+				} else if (event.world.blockExists(event.x, event.y, event.z)
+						&& event.world.getBlock(event.x, event.y, event.z) == SimplyPathsBlocks.blockFastestDownMovingStairPath) {
+					event.world.playSoundAtEntity(event.entityPlayer, "random.anvil_use", 0.5f, 1.0f);
+					event.world.setBlock(event.x, event.y, event.z,
+							SimplyPathsBlocks.blockFastestMovingStairPath, event.world.getBlockMetadata(event.x, event.y,
+									event.z), 0);
+				}
+			}
+		}
 	}
 
 	@SubscribeEvent

@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 
@@ -17,9 +18,10 @@ public class TileEntitySlowMovingStair extends TileEntity {
             for (Object obj : entities)
                {
                if (obj instanceof Entity) {
-            	   EntityLivingBase entity = (EntityLivingBase)obj;
+            	   Entity entity = (Entity)obj;
                 if (entity!= null && entity.onGround && !entity.isInWater())
                 {
+                	entity.stepHeight = 0.6F;
                 	if (this.worldObj.getBlockMetadata(x, y, z) == 2) {
             			entity.motionZ += 0.2F;
             			if (entity.motionZ > 0.2F) {

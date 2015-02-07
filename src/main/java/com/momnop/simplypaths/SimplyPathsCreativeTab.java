@@ -36,6 +36,7 @@ public class SimplyPathsCreativeTab extends CreativeTabs {
 	public void displayAllReleventItems(List list) {
 		this.list = list;
 		
+		addItem(SimplyPathsItems.conveyorWrench);
 		if (ConfigHandler.pathChisel == true) {
 		addItem(SimplyPathsItems.pathChisel);
 		}

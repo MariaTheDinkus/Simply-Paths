@@ -11,9 +11,11 @@ import net.minecraftforge.common.util.EnumHelper;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class SimplyPathsItems {
-	public static Item pathChisel;
+	public static Item pathChisel, conveyorWrench;
 
 	public static void load() {
+		conveyorWrench = new ItemConveyorWrench(ItemInfo.CONVEYOR_WRENCH_UNLOCALIZED_NAME);
+		
 		if (ConfigHandler.pathChisel == true) {
 			pathChisel = new ItemPathChisel(
 					ItemInfo.PATH_CHISEL_UNLOCALIZED_NAME);
@@ -22,6 +24,8 @@ public class SimplyPathsItems {
 	}
 
 	public static void registerItems() {
+		registerItem(conveyorWrench);
+		
 		if (ConfigHandler.pathChisel == true) {
 			registerItem(pathChisel);
 		}

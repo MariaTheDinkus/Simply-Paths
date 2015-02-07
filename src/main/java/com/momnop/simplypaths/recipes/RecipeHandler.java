@@ -25,6 +25,8 @@ public class RecipeHandler
     	GameRegistry.addRecipe(new ItemStack(SimplyPathsBlocks.blockFastMovingPath, 6), new Object[] {"XXX", "GSG", 'X', Blocks.rail, 'G', Items.gold_ingot, 'S', Blocks.stone});
     	GameRegistry.addRecipe(new ItemStack(SimplyPathsBlocks.blockFastestMovingPath, 6), new Object[] {"XXX", "GSG", 'X', Blocks.rail, 'G', Items.diamond, 'S', Blocks.stone});
     	
+    	GameRegistry.addRecipe(new ItemStack(SimplyPathsItems.conveyorWrench, 1), new Object[] {" X ", " XX", "X  ", 'X', Items.iron_ingot});
+    	
     	GameRegistry.addRecipe(new ItemStack(SimplyPathsBlocks.blockSlowMovingStairPath, 6), new Object[] {"X  ", "XX ", "XXX", 'X', SimplyPathsBlocks.blockSlowMovingPath});
     	GameRegistry.addRecipe(new ItemStack(SimplyPathsBlocks.blockFastMovingStairPath, 6), new Object[] {"X  ", "XX ", "XXX", 'X', SimplyPathsBlocks.blockFastMovingPath});
     	GameRegistry.addRecipe(new ItemStack(SimplyPathsBlocks.blockFastestMovingStairPath, 6), new Object[] {"X  ", "XX ", "XXX", 'X', SimplyPathsBlocks.blockFastestMovingPath});

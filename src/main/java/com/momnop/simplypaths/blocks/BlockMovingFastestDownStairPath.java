@@ -1,5 +1,7 @@
 package com.momnop.simplypaths.blocks;
 
+import java.util.Random;
+
 import net.minecraft.block.BlockStairs;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
@@ -7,6 +9,7 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ChatComponentText;
@@ -15,14 +18,14 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
 import com.momnop.simplypaths.SimplyPathsCreativeTab;
-import com.momnop.simplypaths.blocks.tiles.TileEntityFastMovingStair;
+import com.momnop.simplypaths.blocks.tiles.TileEntityFastestDownMovingStair;
 import com.momnop.simplypaths.info.ModInfo;
 import com.momnop.simplypaths.items.SimplyPathsItems;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockMovingFastStairPath extends BlockStairs implements
+public class BlockMovingFastestDownStairPath extends BlockStairs implements
 		ITileEntityProvider {
 
 	@SideOnly(Side.CLIENT)
@@ -34,8 +37,9 @@ public class BlockMovingFastStairPath extends BlockStairs implements
 	@SideOnly(Side.CLIENT)
 	private IIcon pathTop3;
 
-	public BlockMovingFastStairPath(Material material, String unlocalizedName,
-			String soundType, float hardness, int harvestLevel, String toolType) {
+	public BlockMovingFastestDownStairPath(Material material,
+			String unlocalizedName, String soundType, float hardness,
+			int harvestLevel, String toolType) {
 		super(Blocks.stone, harvestLevel);
 		setCreativeTab(SimplyPathsCreativeTab.INSTANCE);
 		setLightOpacity(255);
@@ -102,10 +106,10 @@ public class BlockMovingFastStairPath extends BlockStairs implements
 			return pathTop0;
 		return blockIcon;
 	}
-
+	
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister register) {
-		this.blockIcon = register.registerIcon("gold_block");
+		this.blockIcon = register.registerIcon("diamond_block");
 		this.pathTop0 = register.registerIcon(ModInfo.MODID + ":"
 				+ "conveyorPath" + "_top0");
 		this.pathTop1 = register.registerIcon(ModInfo.MODID + ":"
@@ -144,9 +148,15 @@ public class BlockMovingFastStairPath extends BlockStairs implements
 					p_149689_4_, 0 | i1, 2);
 		}
 	}
+	
+	@Override
+    public Item getItemDropped(int a, Random random, int b)
+    {
+        return Item.getItemFromBlock(SimplyPathsBlocks.blockFastestMovingStairPath);
+    }
 
 	@Override
 	public TileEntity createNewTileEntity(World p_149915_1_, int p_149915_2_) {
-		return new TileEntityFastMovingStair();
+		return new TileEntityFastestDownMovingStair();
 	}
 }
