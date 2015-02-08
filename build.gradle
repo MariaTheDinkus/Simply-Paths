@@ -18,7 +18,6 @@ buildscript {
 apply plugin: 'forge'
 
 version = "1.0.5c"
-projectversion = version
 group= "com.momnop.simplypaths" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "simplypaths"
 
