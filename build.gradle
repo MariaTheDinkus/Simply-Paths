@@ -19,7 +19,7 @@ apply plugin: 'forge'
 
 ext {
 	//Import config file thanks to pahimar :D
-	ext.configFile = file "build.properties"
+	ext.configFile = file "buildconfig.properties"
 
 }
 
@@ -40,7 +40,12 @@ group= "com.momnop.simplypaths" // http://maven.apache.org/guides/mini/guide-nam
 archivesBaseName = "simplypaths"
 
 minecraft {
-    version = "1.7.10-10.13.2.1277"
+    version = config.minecraft_version + "-" + config.forge_version
+  
+	replaceIn "ModInfo.java"
+	replaceIn "mcmod.info"
+	replace "@VERSION@", project.version
+	
     runDir = "eclipse"
 }
 
