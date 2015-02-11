@@ -41,6 +41,8 @@ public class BlockRotating extends Block {
 		setHarvestLevel(toolType, harvestLevel);
 		setBlockName(unlocalizedName);
 		useNeighborBrightness = true;
+		nameTexture = textureName;
+		nameSide = textureSide;
 
 		if (soundType == "gravel") {
 			setStepSound(soundTypeGravel);
