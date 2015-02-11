@@ -2,6 +2,7 @@ package com.momnop.simplypaths.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -28,9 +29,7 @@ public class BlockRotating extends Block {
 	@SideOnly(Side.CLIENT)
 	private IIcon pathTop3;
 	
-	@SideOnly(Side.CLIENT)
 	private String nameTexture;
-	@SideOnly(Side.CLIENT)
 	private String nameSide;
 
 	public BlockRotating(Material material, String unlocalizedName, String soundType,
@@ -42,8 +41,6 @@ public class BlockRotating extends Block {
 		setHarvestLevel(toolType, harvestLevel);
 		setBlockName(unlocalizedName);
 		useNeighborBrightness = true;
-		nameTexture = textureName;
-		nameSide = textureSide;
 
 		if (soundType == "gravel") {
 			setStepSound(soundTypeGravel);

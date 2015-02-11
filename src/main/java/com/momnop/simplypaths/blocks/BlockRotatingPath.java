@@ -28,9 +28,7 @@ public class BlockRotatingPath extends Block {
 	@SideOnly(Side.CLIENT)
 	private IIcon pathTop3;
 	
-	@SideOnly(Side.CLIENT)
 	private String nameTexture;
-	@SideOnly(Side.CLIENT)
 	private String nameSide;
 
 	public BlockRotatingPath(Material material, String unlocalizedName, String soundType,
