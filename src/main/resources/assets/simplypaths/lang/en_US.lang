@@ -1,7 +1,6 @@
 itemGroup.simplypaths=Simply Paths
 
 item.pathChisel.name=Path Chisel
-item.conveyorWrench.name=Conveyor Wrench
 
 tile.asphaultBlock.name=Block of Asphault
 tile.whiteLineBlock.name=White Colored Stone
@@ -34,12 +33,3 @@ tile.blockBirchPlankPath.name=Birch Plank Path
 tile.blockJunglePlankPath.name=Jungle Plank Path
 tile.blockAcaciaPlankPath.name=Acacia Plank Path
 tile.blockDarkOakPlankPath.name=Dark Oak Plank Path
-tile.blockSlowMovingPath.name=Slow Conveyor Path
-tile.blockFastMovingPath.name=Fast Conveyor Path
-tile.blockFastestMovingPath.name=Fastest Conveyor Path
-tile.blockSlowMovingStairPath.name=Slow Conveyor Ramp
-tile.blockFastMovingStairPath.name=Fast Conveyor Ramp
-tile.blockFastestMovingStairPath.name=Fastest Conveyor Ramp
-tile.blockSlowDownMovingStairPath.name=Slow Conveyor Ramp
-tile.blockFastDownMovingStairPath.name=Fast Conveyor Ramp
-tile.blockFastestDownMovingStairPath.name=Fastest Conveyor Ramp

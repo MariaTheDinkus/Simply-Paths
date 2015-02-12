@@ -36,7 +36,6 @@ public class SimplyPathsCreativeTab extends CreativeTabs {
 	public void displayAllReleventItems(List list) {
 		this.list = list;
 		
-		addItem(SimplyPathsItems.conveyorWrench);
 		if (ConfigHandler.pathChisel == true) {
 		addItem(SimplyPathsItems.pathChisel);
 		}
@@ -71,12 +70,6 @@ public class SimplyPathsCreativeTab extends CreativeTabs {
 		addBlock(SimplyPathsBlocks.blockAsphaultWhiteCornerPath);
 		addBlock(SimplyPathsBlocks.blockWhiteLinePath);
 		addBlock(SimplyPathsBlocks.blockYellowLinePath);
-		addBlock(SimplyPathsBlocks.blockSlowMovingPath);
-		addBlock(SimplyPathsBlocks.blockFastMovingPath);
-		addBlock(SimplyPathsBlocks.blockFastestMovingPath);
-		addBlock(SimplyPathsBlocks.blockSlowMovingStairPath);
-		addBlock(SimplyPathsBlocks.blockFastMovingStairPath);
-		addBlock(SimplyPathsBlocks.blockFastestMovingStairPath);
 	}
 
 	private void addItem(Item item) {

@@ -36,16 +36,4 @@ public class BlockInfo
     public static final String JUNGLE_PLANK_PATH_UNLOCALIZED_NAME = "blockJunglePlankPath";
     public static final String ACACIA_PLANK_PATH_UNLOCALIZED_NAME = "blockAcaciaPlankPath";
     public static final String DARK_OAK_PLANK_PATH_UNLOCALIZED_NAME = "blockDarkOakPlankPath";
-    
-    public static final String SLOW_MOVING_PATH_UNLOCALIZED_NAME = "blockSlowMovingPath";
-    public static final String FAST_MOVING_PATH_UNLOCALIZED_NAME = "blockFastMovingPath";
-    public static final String FASTEST_MOVING_PATH_UNLOCALIZED_NAME = "blockFastestMovingPath";
-    
-    public static final String SLOW_MOVING_STAIR_PATH_UNLOCALIZED_NAME = "blockSlowMovingStairPath";
-    public static final String FAST_MOVING_STAIR_PATH_UNLOCALIZED_NAME = "blockFastMovingStairPath";
-    public static final String FASTEST_MOVING_STAIR_PATH_UNLOCALIZED_NAME = "blockFastestMovingStairPath";
-    
-    public static final String SLOW_DOWN_MOVING_STAIR_PATH_UNLOCALIZED_NAME = "blockSlowDownMovingStairPath";
-    public static final String FAST_DOWN_MOVING_STAIR_PATH_UNLOCALIZED_NAME = "blockFastDownMovingStairPath";
-    public static final String FASTEST_DOWN_MOVING_STAIR_PATH_UNLOCALIZED_NAME = "blockFastestDownMovingStairPath";
 }
