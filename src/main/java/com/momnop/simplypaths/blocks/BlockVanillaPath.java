@@ -25,7 +25,6 @@ import net.minecraftforge.common.util.ForgeDirection;
 import com.momnop.simplypaths.SimplyPaths;
 import com.momnop.simplypaths.SimplyPathsCreativeTab;
 import com.momnop.simplypaths.info.ModInfo;
-import com.momnop.simplyutilities.blocks.SimplyUtilitiesBlocks;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
