@@ -14,19 +14,12 @@ public class SimplyPathsItems {
 	public static Item pathChisel;
 
 	public static void load() {
-		
-		if (ConfigHandler.pathChisel == true) {
-			pathChisel = new ItemPathChisel(
-					ItemInfo.PATH_CHISEL_UNLOCALIZED_NAME);
-		}
+		pathChisel = new ItemPathChisel(ItemInfo.PATH_CHISEL_UNLOCALIZED_NAME);
 		registerItems();
 	}
 
 	public static void registerItems() {
-		
-		if (ConfigHandler.pathChisel == true) {
-			registerItem(pathChisel);
-		}
+		registerItem(pathChisel);
 	}
 
 	public static void registerItem(Item i) {

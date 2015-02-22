@@ -56,6 +56,29 @@ public class SimplyPathsEventHandler {
 	}
 
 	@SubscribeEvent
+	public void onPlayerInteractWool(PlayerInteractEvent event) {
+		ItemStack getHeldItem = event.entityPlayer.getCurrentEquippedItem();
+
+		if (event.action == PlayerInteractEvent.Action.RIGHT_CLICK_BLOCK) {
+			if (getHeldItem != null
+					&& getHeldItem.getItem() == SimplyPathsItems.pathChisel) {
+				if (event.world.blockExists(event.x, event.y, event.z)
+						&& event.world.getBlock(event.x, event.y, event.z) == Blocks.wool) {
+					getHeldItem.damageItem(1, event.entityPlayer);
+					event.world.setBlock(event.x, event.y, event.z,
+							SimplyPathsBlocks.blockWoolPath, event.world.getBlockMetadata(event.x, event.y,
+									event.z), 2);
+				} else {
+					
+				}
+
+			} else {
+				
+			}
+		}
+	}
+
+	@SubscribeEvent
 	public void onPlayerInteractShovel(PlayerInteractEvent event) {
 		ItemStack getHeldItem = event.entityPlayer.getCurrentEquippedItem();
 
@@ -188,6 +211,16 @@ public class SimplyPathsEventHandler {
 					getHeldItem.damageItem(1, event.entityPlayer);
 					event.world.setBlock(event.x, event.y, event.z,
 							SimplyPathsBlocks.blockNetherrackPath);
+				} else if (event.world.blockExists(event.x, event.y, event.z)
+						&& event.world.getBlock(event.x, event.y, event.z) == Blocks.brick_block) {
+					getHeldItem.damageItem(1, event.entityPlayer);
+					event.world.setBlock(event.x, event.y, event.z,
+							SimplyPathsBlocks.blockBricksPath);
+				} else if (event.world.blockExists(event.x, event.y, event.z)
+						&& event.world.getBlock(event.x, event.y, event.z) == SimplyPathsBlocks.yellowBricksBlock) {
+					getHeldItem.damageItem(1, event.entityPlayer);
+					event.world.setBlock(event.x, event.y, event.z,
+							SimplyPathsBlocks.blockYellowBricksPath);
 				} else {
 
 				}

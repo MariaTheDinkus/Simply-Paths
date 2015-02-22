@@ -1,5 +1,7 @@
 package com.momnop.simplypaths.blocks;
 
+import java.util.Random;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.ITileEntityProvider;
@@ -9,6 +11,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
@@ -22,13 +25,17 @@ import net.minecraftforge.common.util.ForgeDirection;
 import com.momnop.simplypaths.SimplyPaths;
 import com.momnop.simplypaths.SimplyPathsCreativeTab;
 import com.momnop.simplypaths.info.ModInfo;
+import com.momnop.simplyutilities.blocks.SimplyUtilitiesBlocks;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockVanillaPath extends Block {
+	
+	public static Block blockDropped;
+	
 	public BlockVanillaPath(Material material, String unlocalizedName, String textureName,
-			String soundType, float hardness, int harvestLevel, String toolType) {
+			String soundType, float hardness, int harvestLevel, String toolType, Block droppedBlock) {
 		super(material);
 		setCreativeTab(SimplyPathsCreativeTab.INSTANCE);
 		setBlockBounds(0F, 0F, 0F, 1F, 15F / 16F, 1F);
@@ -38,6 +45,7 @@ public class BlockVanillaPath extends Block {
 		setBlockName(unlocalizedName);
 		setBlockTextureName("minecraft:" + textureName);
 		useNeighborBrightness = true;
+		blockDropped = droppedBlock;
 
 		if (soundType == "gravel") {
 			setStepSound(soundTypeGravel);
@@ -96,6 +104,12 @@ public class BlockVanillaPath extends Block {
 	public boolean renderAsNormalBlock() {
 		return false;
 	}
+	
+	@Override
+    public Item getItemDropped(int a, Random random, int b)
+    {
+        return Item.getItemFromBlock(blockDropped);
+    }
 
 	/*
 	 * @Override

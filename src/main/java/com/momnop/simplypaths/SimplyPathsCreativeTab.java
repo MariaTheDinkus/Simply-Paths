@@ -36,12 +36,27 @@ public class SimplyPathsCreativeTab extends CreativeTabs {
 	public void displayAllReleventItems(List list) {
 		this.list = list;
 		
-		if (ConfigHandler.pathChisel == true) {
 		addItem(SimplyPathsItems.pathChisel);
-		}
 		addBlock(SimplyPathsBlocks.asphaultBlock);
 		addBlock(SimplyPathsBlocks.whiteLineBlock);
 		addBlock(SimplyPathsBlocks.yellowLineBlock);
+		addBlock(SimplyPathsBlocks.yellowBricksBlock);
+		list.add(new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 0));
+		list.add(new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 1));
+		list.add(new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 2));
+		list.add(new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 3));
+		list.add(new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 4));
+		list.add(new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 5));
+		list.add(new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 6));
+		list.add(new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 7));
+		list.add(new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 8));
+		list.add(new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 9));
+		list.add(new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 10));
+		list.add(new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 11));
+		list.add(new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 12));
+		list.add(new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 13));
+		list.add(new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 14));
+		list.add(new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 15));
 		addBlock(SimplyPathsBlocks.blockPath);
 		addBlock(SimplyPathsBlocks.blockDirtPath);
 		addBlock(SimplyPathsBlocks.blockPodzolPath);
@@ -52,6 +67,8 @@ public class SimplyPathsCreativeTab extends CreativeTabs {
 		addBlock(SimplyPathsBlocks.blockCobblestonePath);
 		addBlock(SimplyPathsBlocks.blockStonePath);
 		addBlock(SimplyPathsBlocks.blockStoneBrickPath);
+		addBlock(SimplyPathsBlocks.blockBricksPath);
+		addBlock(SimplyPathsBlocks.blockYellowBricksPath);
 		addBlock(SimplyPathsBlocks.blockQuartzPath);
 		addBlock(SimplyPathsBlocks.blockChiselledQuartzPath);
 		addBlock(SimplyPathsBlocks.blockPillarQuartzPath);
@@ -68,8 +85,6 @@ public class SimplyPathsCreativeTab extends CreativeTabs {
 		addBlock(SimplyPathsBlocks.blockAsphaultWhitePath);
 		addBlock(SimplyPathsBlocks.blockAsphaultYellowPath);
 		addBlock(SimplyPathsBlocks.blockAsphaultWhiteCornerPath);
-		addBlock(SimplyPathsBlocks.blockWhiteLinePath);
-		addBlock(SimplyPathsBlocks.blockYellowLinePath);
 	}
 
 	private void addItem(Item item) {

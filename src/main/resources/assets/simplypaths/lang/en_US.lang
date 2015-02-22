@@ -2,9 +2,31 @@ itemGroup.simplypaths=Simply Paths
 
 item.pathChisel.name=Path Chisel
 
+#Tooltip
+item.tooltip.holdShift=Hold Shift for more Information
+item.tooltip.description=Description:
+
+tile.blockWoolPath_white.name=Wool Path
+tile.blockWoolPath_orange.name=Orange Wool Path
+tile.blockWoolPath_magenta.name=Magenta Wool Path
+tile.blockWoolPath_light_blue.name=Light Blue Wool Path
+tile.blockWoolPath_yellow.name=Yellow Wool Path
+tile.blockWoolPath_lime.name=Lime Wool Path
+tile.blockWoolPath_pink.name=Pink Wool Path
+tile.blockWoolPath_gray.name=Gray Wool Path
+tile.blockWoolPath_light_gray.name=Light Gray Wool Path
+tile.blockWoolPath_cyan.name=Cyan Wool Path
+tile.blockWoolPath_purple.name=Purple Wool Path
+tile.blockWoolPath_blue.name=Blue Wool Path
+tile.blockWoolPath_brown.name=Brown Wool Path
+tile.blockWoolPath_green.name=Green Wool Path
+tile.blockWoolPath_red.name=Red Wool Path
+tile.blockWoolPath_black.name=Black Wool Path
+
 tile.asphaultBlock.name=Block of Asphault
 tile.whiteLineBlock.name=White Colored Stone
 tile.yellowLineBlock.name=Yellow Colored Stone
+tile.yellowBricksBlock.name=Yellow Bricks
 tile.blockPath.name=Worn Path
 tile.blockDirtPath.name=Dirt Path
 tile.blockClayPath.name=Clay Path
@@ -14,6 +36,8 @@ tile.blockSandstonePath.name=Sandstone Path
 tile.blockCobblestonePath.name=Cobblestone Path
 tile.blockStonePath.name=Stone Path
 tile.blockStoneBrickPath.name=Stone Brick Path
+tile.blockBricksPath.name=Bricks Path
+tile.blockYellowBricksPath.name=Yellow Bricks Path
 tile.blockAsphaultPath.name=Asphault Path
 tile.blockAsphaultWhitePath.name=White Line Asphault Path
 tile.blockAsphaultYellowPath.name=Yellow Line Asphault Path
