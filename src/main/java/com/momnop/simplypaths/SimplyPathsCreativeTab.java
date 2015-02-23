@@ -63,6 +63,7 @@ public class SimplyPathsCreativeTab extends CreativeTabs {
 		addBlock(SimplyPathsBlocks.blockClayPath);
 		addBlock(SimplyPathsBlocks.blockGravelPath);
 		addBlock(SimplyPathsBlocks.blockSandPath);
+		addBlock(SimplyPathsBlocks.blockRedSandPath);
 		addBlock(SimplyPathsBlocks.blockSandstonePath);
 		addBlock(SimplyPathsBlocks.blockCobblestonePath);
 		addBlock(SimplyPathsBlocks.blockStonePath);
@@ -85,6 +86,7 @@ public class SimplyPathsCreativeTab extends CreativeTabs {
 		addBlock(SimplyPathsBlocks.blockAsphaultWhitePath);
 		addBlock(SimplyPathsBlocks.blockAsphaultYellowPath);
 		addBlock(SimplyPathsBlocks.blockAsphaultWhiteCornerPath);
+		addBlock(SimplyPathsBlocks.blockLaboratoryPath);
 	}
 
 	private void addItem(Item item) {

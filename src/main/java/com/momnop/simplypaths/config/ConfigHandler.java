@@ -34,4 +34,11 @@ public class ConfigHandler
             configuration.save();
         }
     }
+    
+    public static String configToString(boolean bool) {
+    	if (bool == true) {
+    		return "true";
+    	}
+    	return "false";
+    }
 }

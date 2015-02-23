@@ -1,9 +1,11 @@
 package com.momnop.simplypaths.recipes;
 
+import com.carpentersblocks.util.registry.BlockRegistry;
 import com.momnop.simplypaths.blocks.SimplyPathsBlocks;
 import com.momnop.simplypaths.config.ConfigHandler;
 import com.momnop.simplypaths.items.SimplyPathsItems;
 
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -57,6 +59,7 @@ public class RecipeHandler
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.glowstone, 1), new Object[]{SimplyPathsBlocks.blockGlowstonePath});
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.clay, 1), new Object[]{SimplyPathsBlocks.blockClayPath});
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.sand, 1), new Object[]{SimplyPathsBlocks.blockSandPath});
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.sand, 1, 1), new Object[]{SimplyPathsBlocks.blockRedSandPath});
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.sandstone, 1), new Object[]{SimplyPathsBlocks.blockSandstonePath});
 		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.blockAsphaultWhitePath, 3), new Object[]{SimplyPathsBlocks.blockAsphaultPath, SimplyPathsBlocks.blockAsphaultPath, SimplyPathsBlocks.blockAsphaultPath, new ItemStack(Items.dye, 1, 15)});
 		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.blockAsphaultYellowPath, 3), new Object[]{SimplyPathsBlocks.blockAsphaultPath, SimplyPathsBlocks.blockAsphaultPath, SimplyPathsBlocks.blockAsphaultPath, new ItemStack(Items.dye, 1, 11)});
@@ -81,6 +84,12 @@ public class RecipeHandler
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wool, 1, 13), new Object[]{new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 13)});
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wool, 1, 14), new Object[]{new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 14)});
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wool, 1, 15), new Object[]{new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 15)});
+		
+		if (Loader.isModLoaded("CarpentersBlocks")) {
+			GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.blockCarpentersPath, 1), new Object[]{new ItemStack(SimplyPathsItems.pathChisel, 1, OreDictionary.WILDCARD_VALUE), BlockRegistry.blockCarpentersBlock});
+			
+			GameRegistry.addShapelessRecipe(new ItemStack(BlockRegistry.blockCarpentersBlock, 1), new Object[]{SimplyPathsBlocks.blockCarpentersPath});
+		}
     }
 
 }

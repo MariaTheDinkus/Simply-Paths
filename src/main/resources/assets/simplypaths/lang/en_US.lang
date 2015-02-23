@@ -4,7 +4,7 @@ item.pathChisel.name=Path Chisel
 
 #Tooltip
 item.tooltip.holdShift=Hold Shift for more Information
-item.tooltip.description=Description:
+item.tooltip.ableToPath=Able to Path Blocks with Available Tool:
 
 tile.blockWoolPath_white.name=Wool Path
 tile.blockWoolPath_orange.name=Orange Wool Path
@@ -32,6 +32,7 @@ tile.blockDirtPath.name=Dirt Path
 tile.blockClayPath.name=Clay Path
 tile.blockGravelPath.name=Gravel Path
 tile.blockSandPath.name=Sand Path
+tile.blockRedSandPath.name=Red Sand Path
 tile.blockSandstonePath.name=Sandstone Path
 tile.blockCobblestonePath.name=Cobblestone Path
 tile.blockStonePath.name=Stone Path
@@ -57,3 +58,5 @@ tile.blockBirchPlankPath.name=Birch Plank Path
 tile.blockJunglePlankPath.name=Jungle Plank Path
 tile.blockAcaciaPlankPath.name=Acacia Plank Path
 tile.blockDarkOakPlankPath.name=Dark Oak Plank Path
+
+tile.blockCarpentersPath.name=Carpenter's Path

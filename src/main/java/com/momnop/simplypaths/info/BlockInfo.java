@@ -14,6 +14,7 @@ public class BlockInfo
     public static final String DIRT_PATH_UNLOCALIZED_NAME = "blockDirtPath";
     public static final String GRAVEL_PATH_UNLOCALIZED_NAME = "blockGravelPath";
     public static final String SAND_PATH_UNLOCALIZED_NAME = "blockSandPath";
+    public static final String RED_SAND_PATH_UNLOCALIZED_NAME = "blockRedSandPath";
     public static final String SANDSTONE_PATH_UNLOCALIZED_NAME = "blockSandstonePath";
     public static final String COBBLESTONE_PATH_UNLOCALIZED_NAME = "blockCobblestonePath";
     public static final String STONE_PATH_UNLOCALIZED_NAME = "blockStonePath";
@@ -40,4 +41,5 @@ public class BlockInfo
     public static final String ACACIA_PLANK_PATH_UNLOCALIZED_NAME = "blockAcaciaPlankPath";
     public static final String DARK_OAK_PLANK_PATH_UNLOCALIZED_NAME = "blockDarkOakPlankPath";
     public static final String WOOL_PATH_UNLOCALIZED_NAME = "blockWoolPath";
+    public static final String LABORATORY_PATH_UNLOCALIZED_NAME = "blockLaboratoryPath";
 }

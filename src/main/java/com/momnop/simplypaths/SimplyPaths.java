@@ -25,7 +25,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.relauncher.Side;
 
-@Mod(name = ModInfo.NAME, modid = ModInfo.MODID, version = ModInfo.VERSION)
+@Mod(name = ModInfo.NAME, modid = ModInfo.MODID, version = ModInfo.VERSION, dependencies = "after:CarpentersBlocks")
 public class SimplyPaths
 {
     @SidedProxy(clientSide = "com.momnop.simplypaths.proxies.ClientProxy", serverSide = "com.momnop.simplypaths.proxies.CommonProxy")
