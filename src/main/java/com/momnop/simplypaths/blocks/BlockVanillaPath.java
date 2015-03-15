@@ -31,10 +31,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockVanillaPath extends Block {
 	
-	public static Block blockDropped;
-	
 	public BlockVanillaPath(Material material, String unlocalizedName, String textureName,
-			String soundType, float hardness, int harvestLevel, String toolType, Block droppedBlock) {
+			String soundType, float hardness, int harvestLevel, String toolType) {
 		super(material);
 		setCreativeTab(SimplyPathsCreativeTab.INSTANCE);
 		setBlockBounds(0F, 0F, 0F, 1F, 15F / 16F, 1F);
@@ -44,7 +42,6 @@ public class BlockVanillaPath extends Block {
 		setBlockName(unlocalizedName);
 		setBlockTextureName("minecraft:" + textureName);
 		useNeighborBrightness = true;
-		blockDropped = droppedBlock;
 
 		if (soundType == "gravel") {
 			setStepSound(soundTypeGravel);
@@ -103,12 +100,6 @@ public class BlockVanillaPath extends Block {
 	public boolean renderAsNormalBlock() {
 		return false;
 	}
-	
-	@Override
-    public Item getItemDropped(int a, Random random, int b)
-    {
-        return Item.getItemFromBlock(blockDropped);
-    }
 
 	/*
 	 * @Override

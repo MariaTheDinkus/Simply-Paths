@@ -89,6 +89,8 @@ public class RecipeHandler
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wool, 1, 14), new Object[]{new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 14)});
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wool, 1, 15), new Object[]{new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 15)});
 		
+		GameRegistry.addRecipe(new ItemStack(SimplyPathsBlocks.blockLaboratoryPath, 2), new Object[] {" X ", "XIX", " X ", 'I', Items.iron_ingot, 'X', Blocks.stone});
+		
 		GameRegistry.addRecipe(new ItemStack(SimplyPathsItems.wrench, 1), new Object[] {" X ", " XX", "X  ", 'X', Items.iron_ingot});
     	
     	GameRegistry.addRecipe(new ItemStack(SimplyPathsBlocks.blockSlowMovingPath, 6), new Object[] {"XXX", "GSG", 'X', Blocks.rail, 'G', Items.iron_ingot, 'S', Blocks.stone});

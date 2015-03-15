@@ -82,5 +82,6 @@ tile.blockBirchPlankPath.name=Birch Plank Path
 tile.blockJunglePlankPath.name=Jungle Plank Path
 tile.blockAcaciaPlankPath.name=Acacia Plank Path
 tile.blockDarkOakPlankPath.name=Dark Oak Plank Path
+tile.blockLaboratoryPath.name=Laboratory Path
 
 tile.blockCarpentersPath.name=Carpenter's Path
