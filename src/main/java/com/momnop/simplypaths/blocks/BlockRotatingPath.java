@@ -1,17 +1,24 @@
 package com.momnop.simplypaths.blocks;
 
+import java.util.List;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
+import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 
 import com.momnop.simplypaths.SimplyPathsCreativeTab;
+import com.momnop.simplypaths.TooltipHelper;
+import com.momnop.simplypaths.config.ConfigHandler;
 import com.momnop.simplypaths.info.ModInfo;
 
 import cpw.mods.fml.relauncher.Side;

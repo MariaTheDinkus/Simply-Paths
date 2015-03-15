@@ -32,9 +32,11 @@ public class RecipeHandler
 		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.yellowLineBlock, 3), new Object[]{Blocks.stone, Blocks.stone, Blocks.stone, new ItemStack(Items.dye, 1, 11)});
 		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.yellowBricksBlock, 3), new Object[]{Blocks.brick_block, Blocks.brick_block, Blocks.brick_block, new ItemStack(Items.dye, 1, 11)});
 		
-		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.blockAsphaultPath, 1), new Object[]{SimplyPathsBlocks.blockAsphaultWhitePath});
-		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.blockAsphaultPath, 1), new Object[]{SimplyPathsBlocks.blockAsphaultYellowPath});
-		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.blockAsphaultPath, 1), new Object[]{SimplyPathsBlocks.blockAsphaultWhiteCornerPath});
+		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.blockAsphaultPath, 1), new Object[]{SimplyPathsBlocks.blockAsphaultFullWhitePath});
+		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.blockAsphaultPath, 1), new Object[]{SimplyPathsBlocks.blockAsphaultFullYellowPath});
+		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.blockAsphaultPath, 1), new Object[]{SimplyPathsBlocks.blockAsphaultBrokenWhitePath});
+		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.blockAsphaultPath, 1), new Object[]{SimplyPathsBlocks.blockAsphaultBrokenYellowPath});
+		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.blockAsphaultPath, 1), new Object[]{SimplyPathsBlocks.blockAsphaultWhiteIntersectionPath});
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.dirt, 1), new Object[]{SimplyPathsBlocks.blockDirtPath});
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.dirt, 1, 2), new Object[]{SimplyPathsBlocks.blockPodzolPath});
@@ -61,9 +63,11 @@ public class RecipeHandler
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.sand, 1), new Object[]{SimplyPathsBlocks.blockSandPath});
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.sand, 1, 1), new Object[]{SimplyPathsBlocks.blockRedSandPath});
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.sandstone, 1), new Object[]{SimplyPathsBlocks.blockSandstonePath});
-		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.blockAsphaultWhitePath, 3), new Object[]{SimplyPathsBlocks.blockAsphaultPath, SimplyPathsBlocks.blockAsphaultPath, SimplyPathsBlocks.blockAsphaultPath, new ItemStack(Items.dye, 1, 15)});
-		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.blockAsphaultYellowPath, 3), new Object[]{SimplyPathsBlocks.blockAsphaultPath, SimplyPathsBlocks.blockAsphaultPath, SimplyPathsBlocks.blockAsphaultPath, new ItemStack(Items.dye, 1, 11)});
-		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.blockAsphaultWhiteCornerPath, 3), new Object[]{SimplyPathsBlocks.blockAsphaultWhitePath, SimplyPathsBlocks.blockAsphaultWhitePath, SimplyPathsBlocks.blockAsphaultWhitePath, new ItemStack(Items.dye, 1, 15)});
+		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.blockAsphaultBrokenWhitePath, 3), new Object[]{SimplyPathsBlocks.blockAsphaultPath, SimplyPathsBlocks.blockAsphaultPath, SimplyPathsBlocks.blockAsphaultPath, new ItemStack(Items.dye, 1, 15)});
+		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.blockAsphaultBrokenYellowPath, 3), new Object[]{SimplyPathsBlocks.blockAsphaultPath, SimplyPathsBlocks.blockAsphaultPath, SimplyPathsBlocks.blockAsphaultPath, new ItemStack(Items.dye, 1, 11)});
+		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.blockAsphaultFullWhitePath, 3), new Object[]{SimplyPathsBlocks.blockAsphaultBrokenWhitePath, SimplyPathsBlocks.blockAsphaultBrokenWhitePath, SimplyPathsBlocks.blockAsphaultBrokenWhitePath});
+		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.blockAsphaultFullYellowPath, 3), new Object[]{SimplyPathsBlocks.blockAsphaultBrokenYellowPath, SimplyPathsBlocks.blockAsphaultBrokenYellowPath, SimplyPathsBlocks.blockAsphaultBrokenYellowPath});
+		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.blockAsphaultWhiteIntersectionPath, 3), new Object[]{SimplyPathsBlocks.blockAsphaultFullWhitePath, SimplyPathsBlocks.blockAsphaultFullWhitePath, SimplyPathsBlocks.blockAsphaultFullWhitePath, new ItemStack(Items.dye, 1, 15)});
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.brick_block, 1), new Object[]{SimplyPathsBlocks.blockBricksPath});
 		GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.yellowBricksBlock, 1), new Object[]{SimplyPathsBlocks.blockYellowBricksPath});

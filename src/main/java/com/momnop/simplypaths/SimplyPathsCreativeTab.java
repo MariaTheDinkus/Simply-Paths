@@ -83,9 +83,11 @@ public class SimplyPathsCreativeTab extends CreativeTabs {
 		addBlock(SimplyPathsBlocks.blockAcaciaPlankPath);
 		addBlock(SimplyPathsBlocks.blockDarkOakPlankPath);
 		addBlock(SimplyPathsBlocks.blockAsphaultPath);
-		addBlock(SimplyPathsBlocks.blockAsphaultWhitePath);
-		addBlock(SimplyPathsBlocks.blockAsphaultYellowPath);
-		addBlock(SimplyPathsBlocks.blockAsphaultWhiteCornerPath);
+		addBlock(SimplyPathsBlocks.blockAsphaultFullWhitePath);
+		addBlock(SimplyPathsBlocks.blockAsphaultBrokenWhitePath);
+		addBlock(SimplyPathsBlocks.blockAsphaultFullYellowPath);
+		addBlock(SimplyPathsBlocks.blockAsphaultBrokenYellowPath);
+		addBlock(SimplyPathsBlocks.blockAsphaultWhiteIntersectionPath);
 		addBlock(SimplyPathsBlocks.blockLaboratoryPath);
 	}
 

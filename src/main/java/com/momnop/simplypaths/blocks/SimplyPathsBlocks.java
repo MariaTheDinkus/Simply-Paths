@@ -17,7 +17,7 @@ import net.minecraft.item.ItemStack;
 public class SimplyPathsBlocks
 {
 	public static Block asphaultBlock, whiteLineBlock, yellowLineBlock, yellowBricksBlock;
-	public static Block blockAsphaultWhitePath, blockAsphaultYellowPath, blockAsphaultWhiteCornerPath;
+	public static Block blockAsphaultFullWhitePath, blockAsphaultBrokenWhitePath, blockAsphaultFullYellowPath, blockAsphaultBrokenYellowPath, blockAsphaultWhiteIntersectionPath;
 	public static Block blockPath, blockDirtPath, blockClayPath, blockGravelPath, blockSandPath, blockRedSandPath, blockSoulSandPath, blockPodzolPath;
     public static Block blockAsphaultPath, blockWhiteLinePath, blockYellowLinePath, blockSandstonePath, blockCobblestonePath, blockStonePath, blockStoneBrickPath, blockBricksPath, blockYellowBricksPath, blockQuartzPath, blockChiselledQuartzPath, blockPillarQuartzPath, blockNetherrackPath, blockGlowstonePath;
     public static Block blockOakPlankPath, blockSprucePlankPath, blockBirchPlankPath, blockJunglePlankPath, blockAcaciaPlankPath, blockDarkOakPlankPath;
@@ -33,9 +33,11 @@ public class SimplyPathsBlocks
     	blockAsphaultPath = new BlockCustomPath(Material.rock, BlockInfo.ASPHAULT_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe", SimplyPathsBlocks.blockAsphaultPath);
     	blockWhiteLinePath = new BlockCustomPath(Material.rock, BlockInfo.WHITE_LINE_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe", SimplyPathsBlocks.blockWhiteLinePath);
     	blockYellowLinePath = new BlockCustomPath(Material.rock, BlockInfo.YELLOW_LINE_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe", SimplyPathsBlocks.blockYellowLinePath);
-    	blockAsphaultWhitePath = new BlockRotatingPath(Material.rock, BlockInfo.ASPHAULT_WHITE_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe", "asphaultWhite", "asphaultBlock");
-    	blockAsphaultYellowPath = new BlockRotatingPath(Material.rock, BlockInfo.ASPHAULT_YELLOW_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe", "asphaultYellow", "asphaultBlock");
-    	blockAsphaultWhiteCornerPath = new BlockRotatingPath(Material.rock, BlockInfo.ASPHAULT_WHITE_CORNER_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe", "asphaultWhiteCorner", "asphaultBlock");
+    	blockAsphaultFullWhitePath = new BlockRotatingPath(Material.rock, BlockInfo.ASPHAULT_FULL_WHITE_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe", "asphaultFullWhite", "asphaultBlock");
+    	blockAsphaultBrokenWhitePath = new BlockRotatingPath(Material.rock, BlockInfo.ASPHAULT_BROKEN_WHITE_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe", "asphaultBrokenWhite", "asphaultBlock");
+    	blockAsphaultFullYellowPath = new BlockRotatingPath(Material.rock, BlockInfo.ASPHAULT_FULL_YELLOW_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe", "asphaultFullYellow", "asphaultBlock");
+    	blockAsphaultBrokenYellowPath = new BlockRotatingPath(Material.rock, BlockInfo.ASPHAULT_BROKEN_YELLOW_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe", "asphaultBrokenYellow", "asphaultBlock");
+    	blockAsphaultWhiteIntersectionPath = new BlockRotatingPath(Material.rock, BlockInfo.ASPHAULT_WHITE_INTERSECTION_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe", "asphaultWhiteCorner", "asphaultBlock");
     	blockDirtPath = new BlockVanillaPath(Material.ground, BlockInfo.DIRT_PATH_UNLOCALIZED_NAME, "dirt", "gravel", 0.6F, 0, "shovel", SimplyPathsBlocks.blockDirtPath);
     	blockClayPath = new BlockVanillaPath(Material.ground, BlockInfo.CLAY_PATH_UNLOCALIZED_NAME, "clay", "gravel", 0.6F, 0, "shovel", SimplyPathsBlocks.blockClayPath);
     	blockGravelPath = new BlockVanillaPath(Material.ground, BlockInfo.GRAVEL_PATH_UNLOCALIZED_NAME, "gravel", "gravel", 0.6F, 0, "shovel", SimplyPathsBlocks.blockGravelPath);
@@ -75,9 +77,11 @@ public class SimplyPathsBlocks
         register(yellowBricksBlock);
         register(blockPath);
         register(blockAsphaultPath);
-        register(blockAsphaultWhitePath);
-        register(blockAsphaultYellowPath);
-        register(blockAsphaultWhiteCornerPath);
+        register(blockAsphaultFullWhitePath);
+        register(blockAsphaultFullYellowPath);
+        register(blockAsphaultBrokenWhitePath);
+        register(blockAsphaultBrokenYellowPath);
+        register(blockAsphaultWhiteIntersectionPath);
         register(blockWhiteLinePath);
         register(blockYellowLinePath);
         register(blockDirtPath);

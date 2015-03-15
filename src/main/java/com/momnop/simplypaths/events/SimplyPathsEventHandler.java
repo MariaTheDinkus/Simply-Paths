@@ -18,14 +18,17 @@ import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ChatComponentText;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IChatComponent;
 import net.minecraft.util.MathHelper;
+import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.DrawBlockHighlightEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.event.entity.EntityEvent.EntityConstructing;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent.BreakSpeed;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 
@@ -295,6 +298,21 @@ public class SimplyPathsEventHandler {
 			} else {
 
 			}
+		}
+	}
+	
+	@SubscribeEvent
+	public void setTooltips(ItemTooltipEvent event) {
+		if (event.itemStack.getItem() == Item.getItemFromBlock(SimplyPathsBlocks.blockAsphaultFullWhitePath)) {
+			event.toolTip.add(EnumChatFormatting.WHITE + StatCollector.translateToLocal("item.tooltip.variant") + EnumChatFormatting.GRAY + " " + StatCollector.translateToLocal("item.tooltip.whiteFullVariant"));
+		} else if (event.itemStack.getItem() == Item.getItemFromBlock(SimplyPathsBlocks.blockAsphaultFullYellowPath)) {
+			event.toolTip.add(EnumChatFormatting.WHITE + StatCollector.translateToLocal("item.tooltip.variant") + EnumChatFormatting.GRAY + " " + StatCollector.translateToLocal("item.tooltip.yellowFullVariant"));
+		} else if (event.itemStack.getItem() == Item.getItemFromBlock(SimplyPathsBlocks.blockAsphaultBrokenWhitePath)) {
+			event.toolTip.add(EnumChatFormatting.WHITE + StatCollector.translateToLocal("item.tooltip.variant") + EnumChatFormatting.GRAY + " " + StatCollector.translateToLocal("item.tooltip.whiteBrokenVariant"));
+		} else if (event.itemStack.getItem() == Item.getItemFromBlock(SimplyPathsBlocks.blockAsphaultBrokenYellowPath)) {
+			event.toolTip.add(EnumChatFormatting.WHITE + StatCollector.translateToLocal("item.tooltip.variant") + EnumChatFormatting.GRAY + " " + StatCollector.translateToLocal("item.tooltip.yellowBrokenVariant"));
+		} else if (event.itemStack.getItem() == Item.getItemFromBlock(SimplyPathsBlocks.blockAsphaultWhiteIntersectionPath)) {
+			event.toolTip.add(EnumChatFormatting.WHITE + StatCollector.translateToLocal("item.tooltip.variant") + EnumChatFormatting.GRAY + " " + StatCollector.translateToLocal("item.tooltip.whiteIntersectionVariant"));
 		}
 	}
 }

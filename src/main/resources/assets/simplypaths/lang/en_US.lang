@@ -5,6 +5,12 @@ item.pathChisel.name=Path Chisel
 #Tooltip
 item.tooltip.holdShift=Hold Shift for more Information
 item.tooltip.ableToPath=Able to Path Blocks with Available Tool:
+item.tooltip.variant=Variant:
+item.tooltip.whiteFullVariant=White Full Line
+item.tooltip.yellowFullVariant=Yellow Full Line
+item.tooltip.whiteBrokenVariant=White Broken Line
+item.tooltip.yellowBrokenVariant=Yellow Broken Line
+item.tooltip.whiteIntersectionVariant=White Intersection
 
 tile.blockWoolPath_white.name=Wool Path
 tile.blockWoolPath_orange.name=Orange Wool Path
@@ -40,9 +46,11 @@ tile.blockStoneBrickPath.name=Stone Brick Path
 tile.blockBricksPath.name=Bricks Path
 tile.blockYellowBricksPath.name=Yellow Bricks Path
 tile.blockAsphaultPath.name=Asphault Path
-tile.blockAsphaultWhitePath.name=White Line Asphault Path
-tile.blockAsphaultYellowPath.name=Yellow Line Asphault Path
-tile.blockAsphaultWhiteCornerPath.name=White Corner Asphault Path
+tile.blockAsphaultFullWhitePath.name=Asphault Path
+tile.blockAsphaultFullYellowPath.name=Asphault Path
+tile.blockAsphaultBrokenWhitePath.name=Asphault Path
+tile.blockAsphaultBrokenYellowPath.name=Asphault Path
+tile.blockAsphaultWhiteIntersectionPath.name=Asphault Path
 tile.blockWhiteLinePath.name=White Colored Path
 tile.blockYellowLinePath.name=Yellow Colored Path
 tile.blockQuartzPath.name=Quartz Path

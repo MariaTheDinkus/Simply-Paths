@@ -6,9 +6,6 @@ public class BlockInfo
 	public static final String WHITE_LINE_UNLOCALIZED_NAME = "whiteLineBlock";
 	public static final String YELLOW_LINE_UNLOCALIZED_NAME = "yellowLineBlock";
 	public static final String YELLOW_BRICKS_UNLOCALIZED_NAME = "yellowBricksBlock";
-	public static final String ASPHAULT_WHITE_UNLOCALIZED_NAME = "asphaultWhiteBlock";
-	public static final String ASPHAULT_YELLOW_UNLOCALIZED_NAME = "asphaultYellowBlock";
-	public static final String ASPHAULT_WHITE_CORNER_UNLOCALIZED_NAME = "asphaultWhiteCornerBlock";
     public static final String PATH_UNLOCALIZED_NAME = "blockPath";
     public static final String CLAY_PATH_UNLOCALIZED_NAME = "blockClayPath";
     public static final String DIRT_PATH_UNLOCALIZED_NAME = "blockDirtPath";
@@ -29,9 +26,11 @@ public class BlockInfo
     public static final String GLOWSTONE_PATH_UNLOCALIZED_NAME = "blockGlowstonePath";
     public static final String PODZOL_PATH_UNLOCALIZED_NAME = "blockPodzolPath";
     public static final String ASPHAULT_PATH_UNLOCALIZED_NAME = "blockAsphaultPath";
-    public static final String ASPHAULT_WHITE_PATH_UNLOCALIZED_NAME = "blockAsphaultWhitePath";
-    public static final String ASPHAULT_YELLOW_PATH_UNLOCALIZED_NAME = "blockAsphaultYellowPath";
-    public static final String ASPHAULT_WHITE_CORNER_PATH_UNLOCALIZED_NAME = "blockAsphaultWhiteCornerPath";
+    public static final String ASPHAULT_FULL_WHITE_PATH_UNLOCALIZED_NAME = "blockAsphaultFullWhitePath";
+    public static final String ASPHAULT_BROKEN_WHITE_PATH_UNLOCALIZED_NAME = "blockAsphaultBrokenWhitePath";
+    public static final String ASPHAULT_FULL_YELLOW_PATH_UNLOCALIZED_NAME = "blockAsphaultFullYellowPath";
+    public static final String ASPHAULT_BROKEN_YELLOW_PATH_UNLOCALIZED_NAME = "blockAsphaultBrokenYellowPath";
+    public static final String ASPHAULT_WHITE_INTERSECTION_PATH_UNLOCALIZED_NAME = "blockAsphaultWhiteIntersectionPath";
     public static final String WHITE_LINE_PATH_UNLOCALIZED_NAME = "blockWhiteLinePath";
     public static final String YELLOW_LINE_PATH_UNLOCALIZED_NAME = "blockYellowLinePath";
     public static final String OAK_PLANK_PATH_UNLOCALIZED_NAME = "blockOakPlankPath";
