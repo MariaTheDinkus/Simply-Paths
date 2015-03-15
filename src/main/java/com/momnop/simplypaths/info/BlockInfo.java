@@ -41,4 +41,20 @@ public class BlockInfo
     public static final String DARK_OAK_PLANK_PATH_UNLOCALIZED_NAME = "blockDarkOakPlankPath";
     public static final String WOOL_PATH_UNLOCALIZED_NAME = "blockWoolPath";
     public static final String LABORATORY_PATH_UNLOCALIZED_NAME = "blockLaboratoryPath";
+    
+    public static final String SLOW_MOVING_PATH_UNLOCALIZED_NAME = "blockSlowMovingPath";
+    public static final String FAST_MOVING_PATH_UNLOCALIZED_NAME = "blockFastMovingPath";
+    public static final String FASTEST_MOVING_PATH_UNLOCALIZED_NAME = "blockFastestMovingPath";
+    
+    public static final String SLOW_MOVING_STAIR_PATH_UNLOCALIZED_NAME = "blockSlowMovingStairPath";
+    public static final String FAST_MOVING_STAIR_PATH_UNLOCALIZED_NAME = "blockFastMovingStairPath";
+    public static final String FASTEST_MOVING_STAIR_PATH_UNLOCALIZED_NAME = "blockFastestMovingStairPath";
+    
+    public static final String SLOW_DOWN_MOVING_STAIR_PATH_UNLOCALIZED_NAME = "blockSlowDownMovingStairPath";
+    public static final String FAST_DOWN_MOVING_STAIR_PATH_UNLOCALIZED_NAME = "blockFastDownMovingStairPath";
+    public static final String FASTEST_DOWN_MOVING_STAIR_PATH_UNLOCALIZED_NAME = "blockFastestDownMovingStairPath";
+    
+    public static final String BLOCK_LOW_RANGE_ITEM_PROPELLER_UNLOCALIZED_NAME = "blockLowRangeItemPropeller";
+    public static final String BLOCK_MID_RANGE_ITEM_PROPELLER_UNLOCALIZED_NAME = "blockMidRangeItemPropeller";
+    public static final String BLOCK_HIGH_RANGE_ITEM_PROPELLER_UNLOCALIZED_NAME = "blockHighRangeItemPropeller";
 }

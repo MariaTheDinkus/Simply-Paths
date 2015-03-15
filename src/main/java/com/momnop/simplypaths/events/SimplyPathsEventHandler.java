@@ -57,6 +57,54 @@ public class SimplyPathsEventHandler {
 						- (double) parEntity.yOffset),
 				MathHelper.floor_double(parEntity.posZ));
 	}
+	
+	@SubscribeEvent
+	public void onPlayerInteractStairs(PlayerInteractEvent event) {
+		ItemStack getHeldItem = event.entityPlayer.getCurrentEquippedItem();
+		
+		if (event.action == PlayerInteractEvent.Action.RIGHT_CLICK_BLOCK) {
+			if (getHeldItem != null
+					&& getHeldItem.getItem() == SimplyPathsItems.wrench) {
+				if (event.world.blockExists(event.x, event.y, event.z)
+						&& event.world.getBlock(event.x, event.y, event.z) == SimplyPathsBlocks.blockSlowMovingStairPath) {
+					event.world.playSoundAtEntity(event.entityPlayer, "random.anvil_use", 0.5f, 1.0f);
+					event.world.setBlock(event.x, event.y, event.z,
+							SimplyPathsBlocks.blockSlowDownMovingStairPath, event.world.getBlockMetadata(event.x, event.y,
+									event.z), 0);
+				} else if (event.world.blockExists(event.x, event.y, event.z)
+						&& event.world.getBlock(event.x, event.y, event.z) == SimplyPathsBlocks.blockSlowDownMovingStairPath) {
+					event.world.playSoundAtEntity(event.entityPlayer, "random.anvil_use", 0.5f, 1.0f);
+					event.world.setBlock(event.x, event.y, event.z,
+							SimplyPathsBlocks.blockSlowMovingStairPath, event.world.getBlockMetadata(event.x, event.y,
+									event.z), 0);
+				} else if (event.world.blockExists(event.x, event.y, event.z)
+						&& event.world.getBlock(event.x, event.y, event.z) == SimplyPathsBlocks.blockFastMovingStairPath) {
+					event.world.playSoundAtEntity(event.entityPlayer, "random.anvil_use", 0.5f, 1.0f);
+					event.world.setBlock(event.x, event.y, event.z,
+							SimplyPathsBlocks.blockFastDownMovingStairPath, event.world.getBlockMetadata(event.x, event.y,
+									event.z), 0);
+				} else if (event.world.blockExists(event.x, event.y, event.z)
+						&& event.world.getBlock(event.x, event.y, event.z) == SimplyPathsBlocks.blockFastDownMovingStairPath) {
+					event.world.playSoundAtEntity(event.entityPlayer, "random.anvil_use", 0.5f, 1.0f);
+					event.world.setBlock(event.x, event.y, event.z,
+							SimplyPathsBlocks.blockFastMovingStairPath, event.world.getBlockMetadata(event.x, event.y,
+									event.z), 0);
+				} else if (event.world.blockExists(event.x, event.y, event.z)
+						&& event.world.getBlock(event.x, event.y, event.z) == SimplyPathsBlocks.blockFastestMovingStairPath) {
+					event.world.playSoundAtEntity(event.entityPlayer, "random.anvil_use", 0.5f, 1.0f);
+					event.world.setBlock(event.x, event.y, event.z,
+							SimplyPathsBlocks.blockFastestDownMovingStairPath, event.world.getBlockMetadata(event.x, event.y,
+									event.z), 0);
+				} else if (event.world.blockExists(event.x, event.y, event.z)
+						&& event.world.getBlock(event.x, event.y, event.z) == SimplyPathsBlocks.blockFastestDownMovingStairPath) {
+					event.world.playSoundAtEntity(event.entityPlayer, "random.anvil_use", 0.5f, 1.0f);
+					event.world.setBlock(event.x, event.y, event.z,
+							SimplyPathsBlocks.blockFastestMovingStairPath, event.world.getBlockMetadata(event.x, event.y,
+									event.z), 0);
+				}
+			}
+		}
+	}
 
 	@SubscribeEvent
 	public void onPlayerInteractWool(PlayerInteractEvent event) {

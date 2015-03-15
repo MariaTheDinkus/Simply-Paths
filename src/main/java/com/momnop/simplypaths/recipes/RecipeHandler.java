@@ -89,6 +89,22 @@ public class RecipeHandler
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wool, 1, 14), new Object[]{new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 14)});
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.wool, 1, 15), new Object[]{new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 15)});
 		
+		GameRegistry.addRecipe(new ItemStack(SimplyPathsItems.wrench, 1), new Object[] {" X ", " XX", "X  ", 'X', Items.iron_ingot});
+    	
+    	GameRegistry.addRecipe(new ItemStack(SimplyPathsBlocks.blockSlowMovingPath, 6), new Object[] {"XXX", "GSG", 'X', Blocks.rail, 'G', Items.iron_ingot, 'S', Blocks.stone});
+    	GameRegistry.addRecipe(new ItemStack(SimplyPathsBlocks.blockFastMovingPath, 6), new Object[] {"XXX", "GSG", 'X', Blocks.rail, 'G', Items.gold_ingot, 'S', Blocks.stone});
+    	GameRegistry.addRecipe(new ItemStack(SimplyPathsBlocks.blockFastestMovingPath, 6), new Object[] {"XXX", "GSG", 'X', Blocks.rail, 'G', Items.diamond, 'S', Blocks.stone});
+    	
+    	GameRegistry.addRecipe(new ItemStack(SimplyPathsBlocks.blockSlowMovingStairPath, 6), new Object[] {"X  ", "XX ", "XXX", 'X', SimplyPathsBlocks.blockSlowMovingPath});
+    	GameRegistry.addRecipe(new ItemStack(SimplyPathsBlocks.blockFastMovingStairPath, 6), new Object[] {"X  ", "XX ", "XXX", 'X', SimplyPathsBlocks.blockFastMovingPath});
+    	GameRegistry.addRecipe(new ItemStack(SimplyPathsBlocks.blockFastestMovingStairPath, 6), new Object[] {"X  ", "XX ", "XXX", 'X', SimplyPathsBlocks.blockFastestMovingPath});
+
+    	GameRegistry.addRecipe(new ItemStack(SimplyPathsItems.fanBlade, 2), new Object[] {"X  ", " X ", "  X", 'X', Items.iron_ingot});
+    	
+    	GameRegistry.addRecipe(new ItemStack(SimplyPathsBlocks.blockLowRangeItemPropeller, 1), new Object[] {"SIS", "IGI", "SIS", 'I', SimplyPathsItems.fanBlade, 'G', Items.iron_ingot, 'S', Blocks.stone});
+    	GameRegistry.addRecipe(new ItemStack(SimplyPathsBlocks.blockMidRangeItemPropeller, 1), new Object[] {"SIS", "IGI", "SIS", 'I', SimplyPathsItems.fanBlade, 'G', Items.gold_ingot, 'S', Blocks.stone});
+    	GameRegistry.addRecipe(new ItemStack(SimplyPathsBlocks.blockHighRangeItemPropeller, 1), new Object[] {"SIS", "IGI", "SIS", 'I', SimplyPathsItems.fanBlade, 'G', Items.diamond, 'S', Blocks.stone});
+		
 		if (Loader.isModLoaded("CarpentersBlocks")) {
 			GameRegistry.addShapelessRecipe(new ItemStack(SimplyPathsBlocks.blockCarpentersPath, 1), new Object[]{new ItemStack(SimplyPathsItems.pathChisel, 1, OreDictionary.WILDCARD_VALUE), BlockRegistry.blockCarpentersBlock});
 			

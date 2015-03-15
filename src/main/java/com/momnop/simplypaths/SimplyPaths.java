@@ -13,6 +13,9 @@ import com.momnop.simplypaths.info.ModInfo;
 import com.momnop.simplypaths.items.SimplyPathsItems;
 import com.momnop.simplypaths.proxies.CommonProxy;
 import com.momnop.simplypaths.recipes.RecipeHandler;
+import com.momnop.simplypaths.blocks.tiles.TileEntityHighRangeItemPropeller;
+import com.momnop.simplypaths.blocks.tiles.TileEntityLowRangeItemPropeller;
+import com.momnop.simplypaths.blocks.tiles.TileEntityMidRangeItemPropeller;
 
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
@@ -23,6 +26,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 
 @Mod(name = ModInfo.NAME, modid = ModInfo.MODID, version = ModInfo.VERSION, dependencies = "after:CarpentersBlocks")
@@ -39,6 +43,9 @@ public class SimplyPaths
         SimplyPathsItems.load();
         proxy.initRenders();
         RecipeHandler.doRecipes();
+        GameRegistry.registerTileEntity(TileEntityLowRangeItemPropeller.class, "tileEntityLowRangeItemPropeller");
+        GameRegistry.registerTileEntity(TileEntityMidRangeItemPropeller.class, "tileEntityMidRangeItemPropeller");
+        GameRegistry.registerTileEntity(TileEntityHighRangeItemPropeller.class, "tileEntityHighRangeItemPropeller");
     }
     
     @EventHandler

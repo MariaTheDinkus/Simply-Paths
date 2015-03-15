@@ -4,6 +4,18 @@ import com.carpentersblocks.CarpentersBlocks;
 import com.carpentersblocks.block.BlockCarpentersBlock;
 import com.carpentersblocks.util.BlockProperties;
 import com.momnop.simplypaths.info.BlockInfo;
+import com.momnop.simplypaths.blocks.mechanical.BlockHighRangeItemPropeller;
+import com.momnop.simplypaths.blocks.mechanical.BlockLowRangeItemPropeller;
+import com.momnop.simplypaths.blocks.mechanical.BlockMidRangeItemPropeller;
+import com.momnop.simplypaths.blocks.mechanical.BlockMovingFastDownStairPath;
+import com.momnop.simplypaths.blocks.mechanical.BlockMovingFastPath;
+import com.momnop.simplypaths.blocks.mechanical.BlockMovingFastStairPath;
+import com.momnop.simplypaths.blocks.mechanical.BlockMovingFastestDownStairPath;
+import com.momnop.simplypaths.blocks.mechanical.BlockMovingFastestPath;
+import com.momnop.simplypaths.blocks.mechanical.BlockMovingFastestStairPath;
+import com.momnop.simplypaths.blocks.mechanical.BlockMovingSlowDownStairPath;
+import com.momnop.simplypaths.blocks.mechanical.BlockMovingSlowPath;
+import com.momnop.simplypaths.blocks.mechanical.BlockMovingSlowStairPath;
 
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -16,6 +28,8 @@ import net.minecraft.item.ItemStack;
 
 public class SimplyPathsBlocks
 {
+	public static Block blockSlowMovingPath, blockFastMovingPath, blockFastestMovingPath, blockSlowMovingStairPath, blockFastMovingStairPath, blockFastestMovingStairPath, blockSlowDownMovingStairPath, blockFastDownMovingStairPath, blockFastestDownMovingStairPath;
+	public static Block blockLowRangeItemPropeller, blockMidRangeItemPropeller, blockHighRangeItemPropeller;
 	public static Block asphaultBlock, whiteLineBlock, yellowLineBlock, yellowBricksBlock;
 	public static Block blockAsphaultFullWhitePath, blockAsphaultBrokenWhitePath, blockAsphaultFullYellowPath, blockAsphaultBrokenYellowPath, blockAsphaultWhiteIntersectionPath;
 	public static Block blockPath, blockDirtPath, blockClayPath, blockGravelPath, blockSandPath, blockRedSandPath, blockSoulSandPath, blockPodzolPath;
@@ -25,6 +39,22 @@ public class SimplyPathsBlocks
     public static Block blockWoolPath;
     public static void load()
     {
+    	blockSlowMovingPath = new BlockMovingSlowPath(Material.rock, BlockInfo.SLOW_MOVING_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
+        blockFastMovingPath = new BlockMovingFastPath(Material.rock, BlockInfo.FAST_MOVING_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
+        blockFastestMovingPath = new BlockMovingFastestPath(Material.rock, BlockInfo.FASTEST_MOVING_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
+              
+        blockSlowMovingStairPath = new BlockMovingSlowStairPath(Material.rock, BlockInfo.SLOW_MOVING_STAIR_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
+        blockFastMovingStairPath = new BlockMovingFastStairPath(Material.rock, BlockInfo.FAST_MOVING_STAIR_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
+        blockFastestMovingStairPath = new BlockMovingFastestStairPath(Material.rock, BlockInfo.FASTEST_MOVING_STAIR_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
+        
+        blockSlowDownMovingStairPath = new BlockMovingSlowDownStairPath(Material.rock, BlockInfo.SLOW_DOWN_MOVING_STAIR_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
+        blockFastDownMovingStairPath = new BlockMovingFastDownStairPath(Material.rock, BlockInfo.FAST_DOWN_MOVING_STAIR_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
+        blockFastestDownMovingStairPath = new BlockMovingFastestDownStairPath(Material.rock, BlockInfo.FASTEST_DOWN_MOVING_STAIR_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
+        
+        blockLowRangeItemPropeller = new BlockLowRangeItemPropeller(Material.rock, BlockInfo.BLOCK_LOW_RANGE_ITEM_PROPELLER_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
+        blockMidRangeItemPropeller = new BlockMidRangeItemPropeller(Material.rock, BlockInfo.BLOCK_MID_RANGE_ITEM_PROPELLER_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
+        blockHighRangeItemPropeller = new BlockHighRangeItemPropeller(Material.rock, BlockInfo.BLOCK_HIGH_RANGE_ITEM_PROPELLER_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
+    	
     	asphaultBlock = new BlockNormal(BlockInfo.ASPHAULT_UNLOCALIZED_NAME, "stone", 1.5F, 0, "stone");
     	whiteLineBlock = new BlockNormal(BlockInfo.WHITE_LINE_UNLOCALIZED_NAME, "stone", 1.5F, 0, "stone");
     	yellowLineBlock = new BlockNormal(BlockInfo.YELLOW_LINE_UNLOCALIZED_NAME, "stone", 1.5F, 0, "stone");
@@ -70,6 +100,22 @@ public class SimplyPathsBlocks
         
         register(blockCarpentersPath);
         }
+        
+        register(blockSlowMovingPath);
+        register(blockFastMovingPath);
+        register(blockFastestMovingPath);
+        
+        register(blockSlowMovingStairPath);
+        register(blockFastMovingStairPath);
+        register(blockFastestMovingStairPath);
+        
+        register(blockSlowDownMovingStairPath);
+        register(blockFastDownMovingStairPath);
+        register(blockFastestDownMovingStairPath);
+        
+        register(blockLowRangeItemPropeller);
+        register(blockMidRangeItemPropeller);
+        register(blockHighRangeItemPropeller);
         
         register(asphaultBlock);
         register(whiteLineBlock);

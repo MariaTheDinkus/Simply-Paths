@@ -1,6 +1,8 @@
 itemGroup.simplypaths=Simply Paths
+itemGroup.simplypathsmechanical=Simply Paths Mechanical
 
 item.pathChisel.name=Path Chisel
+item.conveyorWrench.name=Wrench
 
 #Tooltip
 item.tooltip.holdShift=Hold Shift for more Information
@@ -11,6 +13,20 @@ item.tooltip.yellowFullVariant=Yellow Full Line
 item.tooltip.whiteBrokenVariant=White Broken Line
 item.tooltip.yellowBrokenVariant=Yellow Broken Line
 item.tooltip.whiteIntersectionVariant=White Intersection
+
+tile.blockSlowMovingPath.name=Slow Conveyor
+tile.blockFastMovingPath.name=Fast Conveyor
+tile.blockFastestMovingPath.name=Fastest Conveyor
+tile.blockSlowMovingStairPath.name=Slow Conveyor Ramp
+tile.blockFastMovingStairPath.name=Fast Conveyor Ramp
+tile.blockFastestMovingStairPath.name=Fastest Conveyor Ramp
+tile.blockSlowDownMovingStairPath.name=Slow Conveyor Ramp
+tile.blockFastDownMovingStairPath.name=Fast Conveyor Ramp
+tile.blockFastestDownMovingStairPath.name=Fastest Conveyor Ramp
+
+tile.blockLowRangeItemPropeller=Low Range Item Propeller
+tile.blockMidRangeItemPropeller=Mid Range Item Propeller
+tile.blockHighRangeItemPropeller=High Range Item Propeller
 
 tile.blockWoolPath_white.name=Wool Path
 tile.blockWoolPath_orange.name=Orange Wool Path
