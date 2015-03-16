@@ -37,7 +37,7 @@ public class SimplyPathsMechanicalCreativeTab extends CreativeTabs {
 		this.list = list;
 		
 		addItem(SimplyPathsItems.wrench);
-		addItem(SimplyPathsItems.fanBlade);
+		//addItem(SimplyPathsItems.fanBlade);
 		
 		addBlock(SimplyPathsBlocks.blockSlowMovingPath);
 		addBlock(SimplyPathsBlocks.blockFastMovingPath);
@@ -45,9 +45,9 @@ public class SimplyPathsMechanicalCreativeTab extends CreativeTabs {
 		addBlock(SimplyPathsBlocks.blockSlowMovingStairPath);
 		addBlock(SimplyPathsBlocks.blockFastMovingStairPath);
 		addBlock(SimplyPathsBlocks.blockFastestMovingStairPath);
-		addBlock(SimplyPathsBlocks.blockLowRangeItemPropeller);
-		addBlock(SimplyPathsBlocks.blockMidRangeItemPropeller);
-		addBlock(SimplyPathsBlocks.blockHighRangeItemPropeller);
+		//addBlock(SimplyPathsBlocks.blockLowRangeItemPropeller);
+		//addBlock(SimplyPathsBlocks.blockMidRangeItemPropeller);
+		//addBlock(SimplyPathsBlocks.blockHighRangeItemPropeller);
 	}
 
 	private void addItem(Item item) {

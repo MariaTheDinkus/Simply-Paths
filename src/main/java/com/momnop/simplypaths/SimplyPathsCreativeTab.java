@@ -38,9 +38,8 @@ public class SimplyPathsCreativeTab extends CreativeTabs {
 		
 		addItem(SimplyPathsItems.pathChisel);
 		addBlock(SimplyPathsBlocks.asphaultBlock);
-		addBlock(SimplyPathsBlocks.whiteLineBlock);
-		addBlock(SimplyPathsBlocks.yellowLineBlock);
 		addBlock(SimplyPathsBlocks.yellowBricksBlock);
+		addBlock(SimplyPathsBlocks.blackBricksBlock);
 		list.add(new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 0));
 		list.add(new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 1));
 		list.add(new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 2));
@@ -58,6 +57,7 @@ public class SimplyPathsCreativeTab extends CreativeTabs {
 		list.add(new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 14));
 		list.add(new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 15));
 		addBlock(SimplyPathsBlocks.blockPath);
+		addBlock(SimplyPathsBlocks.blockDarkPath);
 		addBlock(SimplyPathsBlocks.blockDirtPath);
 		addBlock(SimplyPathsBlocks.blockPodzolPath);
 		addBlock(SimplyPathsBlocks.blockClayPath);
@@ -70,6 +70,7 @@ public class SimplyPathsCreativeTab extends CreativeTabs {
 		addBlock(SimplyPathsBlocks.blockStoneBrickPath);
 		addBlock(SimplyPathsBlocks.blockBricksPath);
 		addBlock(SimplyPathsBlocks.blockYellowBricksPath);
+		addBlock(SimplyPathsBlocks.blockBlackBricksPath);
 		addBlock(SimplyPathsBlocks.blockQuartzPath);
 		addBlock(SimplyPathsBlocks.blockChiselledQuartzPath);
 		addBlock(SimplyPathsBlocks.blockPillarQuartzPath);

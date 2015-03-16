@@ -11,7 +11,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.IIcon;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.common.util.ForgeDirection;
 
 import com.momnop.simplypaths.SimplyPathsCreativeTab;
 import com.momnop.simplypaths.info.ModInfo;
@@ -75,6 +77,24 @@ public class BlockWoolPath extends Block {
 		} else {
 
 		}
+	}
+	
+	@Override
+	public void setBlockBoundsBasedOnState(IBlockAccess world, int x, int y, int z) {
+		Block blockAbove = world.getBlock(x, y + 1, z);
+		if(!blockAbove.isAir(world, x, y + 1, z))
+			setBlockBounds(0F, 0F, 0F, 1F, 1, 1F);
+		else setBlockBounds(0F, 0F, 0F, 1F, 15F / 16F, 1F);
+	}
+
+	@Override
+	public boolean isSideSolid(IBlockAccess world, int x, int y, int z, ForgeDirection side) {
+		return side == ForgeDirection.DOWN;
+	}
+
+	@Override
+	public void onNeighborBlockChange(World world, int x, int y, int z, Block block) {
+		setBlockBoundsBasedOnState(world, x, y, z);
 	}
 	
 	@Override

@@ -1,8 +1,14 @@
 package com.momnop.simplypaths;
 
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
+
 import org.lwjgl.input.Keyboard;
+
+import com.momnop.simplypaths.blocks.SimplyPathsBlocks;
 
 import java.util.List;
 
@@ -59,5 +65,11 @@ public class TooltipHelper
             list.add(EnumChatFormatting.WHITE + StatCollector.translateToLocal(informationSecondary1));
             list.add(EnumChatFormatting.WHITE + StatCollector.translateToLocal(informationSecondary2));
         }
+    }
+    
+    public static void addVariantTooltip(ItemStack itemStack, Block comparedBlock, String informationPrimary, List info) {
+    	if (itemStack.getItem() == Item.getItemFromBlock(comparedBlock)) {
+			info.add(EnumChatFormatting.WHITE + StatCollector.translateToLocal("item.tooltip.variant") + EnumChatFormatting.GRAY + " " + StatCollector.translateToLocal(informationPrimary));
+		}
     }
 }

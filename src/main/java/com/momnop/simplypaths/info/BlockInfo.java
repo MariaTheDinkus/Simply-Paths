@@ -6,7 +6,9 @@ public class BlockInfo
 	public static final String WHITE_LINE_UNLOCALIZED_NAME = "whiteLineBlock";
 	public static final String YELLOW_LINE_UNLOCALIZED_NAME = "yellowLineBlock";
 	public static final String YELLOW_BRICKS_UNLOCALIZED_NAME = "yellowBricksBlock";
+	public static final String BLACK_BRICKS_UNLOCALIZED_NAME = "blackBricksBlock";
     public static final String PATH_UNLOCALIZED_NAME = "blockPath";
+    public static final String DARK_PATH_UNLOCALIZED_NAME = "blockDarkPath";
     public static final String CLAY_PATH_UNLOCALIZED_NAME = "blockClayPath";
     public static final String DIRT_PATH_UNLOCALIZED_NAME = "blockDirtPath";
     public static final String GRAVEL_PATH_UNLOCALIZED_NAME = "blockGravelPath";
@@ -18,6 +20,7 @@ public class BlockInfo
     public static final String STONE_BRICK_PATH_UNLOCALIZED_NAME = "blockStoneBrickPath";
     public static final String BRICKS_PATH_UNLOCALIZED_NAME = "blockBricksPath";
     public static final String YELLOW_BRICKS_PATH_UNLOCALIZED_NAME = "blockYellowBricksPath";
+    public static final String BLACK_BRICKS_PATH_UNLOCALIZED_NAME = "blockBlackBricksPath";
     public static final String QUARTZ_PATH_UNLOCALIZED_NAME = "blockQuartzPath";
     public static final String CHISELLED_QUARTZ_PATH_UNLOCALIZED_NAME = "blockChiselledQuartzPath";
     public static final String PILLAR_QUARTZ_PATH_UNLOCALIZED_NAME = "blockPillarQuartzPath";

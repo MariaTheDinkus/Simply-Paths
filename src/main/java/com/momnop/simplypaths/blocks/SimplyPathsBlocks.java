@@ -30,10 +30,10 @@ public class SimplyPathsBlocks
 {
 	public static Block blockSlowMovingPath, blockFastMovingPath, blockFastestMovingPath, blockSlowMovingStairPath, blockFastMovingStairPath, blockFastestMovingStairPath, blockSlowDownMovingStairPath, blockFastDownMovingStairPath, blockFastestDownMovingStairPath;
 	public static Block blockLowRangeItemPropeller, blockMidRangeItemPropeller, blockHighRangeItemPropeller;
-	public static Block asphaultBlock, whiteLineBlock, yellowLineBlock, yellowBricksBlock;
+	public static Block asphaultBlock, whiteLineBlock, yellowLineBlock, yellowBricksBlock, blackBricksBlock;
 	public static Block blockAsphaultFullWhitePath, blockAsphaultBrokenWhitePath, blockAsphaultFullYellowPath, blockAsphaultBrokenYellowPath, blockAsphaultWhiteIntersectionPath;
-	public static Block blockPath, blockDirtPath, blockClayPath, blockGravelPath, blockSandPath, blockRedSandPath, blockSoulSandPath, blockPodzolPath;
-    public static Block blockAsphaultPath, blockWhiteLinePath, blockYellowLinePath, blockSandstonePath, blockCobblestonePath, blockStonePath, blockStoneBrickPath, blockBricksPath, blockYellowBricksPath, blockQuartzPath, blockChiselledQuartzPath, blockPillarQuartzPath, blockNetherrackPath, blockGlowstonePath;
+	public static Block blockPath, blockDarkPath, blockDirtPath, blockClayPath, blockGravelPath, blockSandPath, blockRedSandPath, blockSoulSandPath, blockPodzolPath;
+    public static Block blockAsphaultPath, blockWhiteLinePath, blockYellowLinePath, blockSandstonePath, blockCobblestonePath, blockStonePath, blockStoneBrickPath, blockBricksPath, blockYellowBricksPath, blockBlackBricksPath, blockQuartzPath, blockChiselledQuartzPath, blockPillarQuartzPath, blockNetherrackPath, blockGlowstonePath;
     public static Block blockOakPlankPath, blockSprucePlankPath, blockBirchPlankPath, blockJunglePlankPath, blockAcaciaPlankPath, blockDarkOakPlankPath;
     public static Block blockLaboratoryPath, blockCarpentersPath;
     public static Block blockWoolPath;
@@ -59,7 +59,9 @@ public class SimplyPathsBlocks
     	whiteLineBlock = new BlockNormal(BlockInfo.WHITE_LINE_UNLOCALIZED_NAME, "stone", 1.5F, 0, "stone");
     	yellowLineBlock = new BlockNormal(BlockInfo.YELLOW_LINE_UNLOCALIZED_NAME, "stone", 1.5F, 0, "stone");
     	yellowBricksBlock = new BlockNormal(BlockInfo.YELLOW_BRICKS_UNLOCALIZED_NAME, "stone", 1.5F, 0, "stone");
+    	blackBricksBlock = new BlockNormal(BlockInfo.BLACK_BRICKS_UNLOCALIZED_NAME, "stone", 1.5F, 0, "stone");
     	blockPath = new BlockCustomPath(Material.ground, BlockInfo.PATH_UNLOCALIZED_NAME, "gravel", 0.6F, 0, "shovel");
+    	blockDarkPath = new BlockCustomPath(Material.ground, BlockInfo.DARK_PATH_UNLOCALIZED_NAME, "gravel", 0.6F, 0, "shovel");
     	blockAsphaultPath = new BlockCustomPath(Material.rock, BlockInfo.ASPHAULT_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
     	blockWhiteLinePath = new BlockCustomPath(Material.rock, BlockInfo.WHITE_LINE_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
     	blockYellowLinePath = new BlockCustomPath(Material.rock, BlockInfo.YELLOW_LINE_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
@@ -79,6 +81,7 @@ public class SimplyPathsBlocks
         blockStoneBrickPath = new BlockVanillaPath(Material.rock, BlockInfo.STONE_BRICK_PATH_UNLOCALIZED_NAME, "stonebrick", "stone", 1.5F, 0, "pickaxe");
         blockBricksPath = new BlockVanillaPath(Material.rock, BlockInfo.BRICKS_PATH_UNLOCALIZED_NAME, "brick", "stone", 1.5F, 0, "pickaxe");
         blockYellowBricksPath = new BlockCustomPath(Material.rock, BlockInfo.YELLOW_BRICKS_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
+        blockBlackBricksPath = new BlockCustomPath(Material.rock, BlockInfo.BLACK_BRICKS_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
         blockQuartzPath = new BlockVanillaPath(Material.rock, BlockInfo.QUARTZ_PATH_UNLOCALIZED_NAME, "quartz_block_side", "stone", 1.5F, 0, "pickaxe");
         blockChiselledQuartzPath = new BlockVanillaPath(Material.rock, BlockInfo.CHISELLED_QUARTZ_PATH_UNLOCALIZED_NAME, "quartz_block_chiseled_top", "stone", 1.5F, 0, "pickaxe");
         blockPillarQuartzPath = new BlockVanillaPath(Material.rock, BlockInfo.PILLAR_QUARTZ_PATH_UNLOCALIZED_NAME, "quartz_block_lines", "stone", 1.5F, 0, "pickaxe");
@@ -121,7 +124,9 @@ public class SimplyPathsBlocks
         register(whiteLineBlock);
         register(yellowLineBlock);
         register(yellowBricksBlock);
+        register(blackBricksBlock);
         register(blockPath);
+        register(blockDarkPath);
         register(blockAsphaultPath);
         register(blockAsphaultFullWhitePath);
         register(blockAsphaultFullYellowPath);
@@ -141,6 +146,7 @@ public class SimplyPathsBlocks
         register(blockStoneBrickPath);
         register(blockBricksPath);
         register(blockYellowBricksPath);
+        register(blockBlackBricksPath);
         register(blockQuartzPath);
         register(blockChiselledQuartzPath);
         register(blockPillarQuartzPath);

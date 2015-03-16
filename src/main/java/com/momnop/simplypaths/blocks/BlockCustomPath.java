@@ -72,6 +72,24 @@ public class BlockCustomPath extends Block {
 	}
 	
 	@Override
+	public void setBlockBoundsBasedOnState(IBlockAccess world, int x, int y, int z) {
+		Block blockAbove = world.getBlock(x, y + 1, z);
+		if(!blockAbove.isAir(world, x, y + 1, z))
+			setBlockBounds(0F, 0F, 0F, 1F, 1, 1F);
+		else setBlockBounds(0F, 0F, 0F, 1F, 15F / 16F, 1F);
+	}
+
+	@Override
+	public boolean isSideSolid(IBlockAccess world, int x, int y, int z, ForgeDirection side) {
+		return side == ForgeDirection.DOWN;
+	}
+
+	@Override
+	public void onNeighborBlockChange(World world, int x, int y, int z, Block block) {
+		setBlockBoundsBasedOnState(world, x, y, z);
+	}
+	
+	@Override
 	public void onEntityWalking(World world, int x, int y, int z, Entity entity) {
 		float speed = 2F;
 		float max = 0.4F;

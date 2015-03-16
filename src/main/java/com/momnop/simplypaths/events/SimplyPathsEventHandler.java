@@ -32,6 +32,7 @@ import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent.BreakSpeed;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 
+import com.momnop.simplypaths.TooltipHelper;
 import com.momnop.simplypaths.config.ConfigHandler;
 import com.momnop.simplypaths.items.SimplyPathsItems;
 import com.momnop.simplypaths.blocks.SimplyPathsBlocks;
@@ -187,6 +188,16 @@ public class SimplyPathsEventHandler {
 					getHeldItem.damageItem(1, event.entityPlayer);
 					event.world.setBlock(event.x, event.y, event.z,
 							SimplyPathsBlocks.blockRedSandPath);
+				} else if (event.world.blockExists(event.x, event.y, event.z)
+						&& event.world.getBlock(event.x, event.y, event.z) == SimplyPathsBlocks.blockPath) {
+					getHeldItem.damageItem(1, event.entityPlayer);
+					event.world.setBlock(event.x, event.y, event.z,
+							SimplyPathsBlocks.blockDarkPath);
+				} else if (event.world.blockExists(event.x, event.y, event.z)
+						&& event.world.getBlock(event.x, event.y, event.z) == SimplyPathsBlocks.blockDarkPath) {
+					getHeldItem.damageItem(1, event.entityPlayer);
+					event.world.setBlock(event.x, event.y, event.z,
+							SimplyPathsBlocks.blockPath);
 				} else {
 
 				}
@@ -351,16 +362,19 @@ public class SimplyPathsEventHandler {
 	
 	@SubscribeEvent
 	public void setTooltips(ItemTooltipEvent event) {
-		if (event.itemStack.getItem() == Item.getItemFromBlock(SimplyPathsBlocks.blockAsphaultFullWhitePath)) {
-			event.toolTip.add(EnumChatFormatting.WHITE + StatCollector.translateToLocal("item.tooltip.variant") + EnumChatFormatting.GRAY + " " + StatCollector.translateToLocal("item.tooltip.whiteFullVariant"));
-		} else if (event.itemStack.getItem() == Item.getItemFromBlock(SimplyPathsBlocks.blockAsphaultFullYellowPath)) {
-			event.toolTip.add(EnumChatFormatting.WHITE + StatCollector.translateToLocal("item.tooltip.variant") + EnumChatFormatting.GRAY + " " + StatCollector.translateToLocal("item.tooltip.yellowFullVariant"));
-		} else if (event.itemStack.getItem() == Item.getItemFromBlock(SimplyPathsBlocks.blockAsphaultBrokenWhitePath)) {
-			event.toolTip.add(EnumChatFormatting.WHITE + StatCollector.translateToLocal("item.tooltip.variant") + EnumChatFormatting.GRAY + " " + StatCollector.translateToLocal("item.tooltip.whiteBrokenVariant"));
-		} else if (event.itemStack.getItem() == Item.getItemFromBlock(SimplyPathsBlocks.blockAsphaultBrokenYellowPath)) {
-			event.toolTip.add(EnumChatFormatting.WHITE + StatCollector.translateToLocal("item.tooltip.variant") + EnumChatFormatting.GRAY + " " + StatCollector.translateToLocal("item.tooltip.yellowBrokenVariant"));
-		} else if (event.itemStack.getItem() == Item.getItemFromBlock(SimplyPathsBlocks.blockAsphaultWhiteIntersectionPath)) {
-			event.toolTip.add(EnumChatFormatting.WHITE + StatCollector.translateToLocal("item.tooltip.variant") + EnumChatFormatting.GRAY + " " + StatCollector.translateToLocal("item.tooltip.whiteIntersectionVariant"));
+		TooltipHelper.addVariantTooltip(event.itemStack, SimplyPathsBlocks.blockAsphaultFullWhitePath, "item.tooltip.whiteFullVariant", event.toolTip);
+		TooltipHelper.addVariantTooltip(event.itemStack, SimplyPathsBlocks.blockAsphaultFullYellowPath, "item.tooltip.yellowFullVariant", event.toolTip);
+		TooltipHelper.addVariantTooltip(event.itemStack, SimplyPathsBlocks.blockAsphaultBrokenWhitePath, "item.tooltip.whiteBrokenVariant", event.toolTip);
+		TooltipHelper.addVariantTooltip(event.itemStack, SimplyPathsBlocks.blockAsphaultBrokenYellowPath, "item.tooltip.yellowBrokenVariant", event.toolTip);
+		TooltipHelper.addVariantTooltip(event.itemStack, SimplyPathsBlocks.blockAsphaultWhiteIntersectionPath, "item.tooltip.whiteIntersectionVariant", event.toolTip);
+		TooltipHelper.addVariantTooltip(event.itemStack, SimplyPathsBlocks.blockDarkPath, "item.tooltip.darkPathVariant", event.toolTip);
+		
+		if (event.itemStack.getItem() == Item.getItemFromBlock(SimplyPathsBlocks.blockYellowBricksPath)) {
+			event.toolTip.add(EnumChatFormatting.ITALIC + "'We're off to see the wizard!'");
+		} else if (event.itemStack.getItem() == Item.getItemFromBlock(SimplyPathsBlocks.blackBricksBlock)) {
+			event.toolTip.add(EnumChatFormatting.ITALIC + "'Magic is Might.'");
+		} else if (event.itemStack.getItem() == Item.getItemFromBlock(SimplyPathsBlocks.blockBlackBricksPath)) {
+			event.toolTip.add(EnumChatFormatting.ITALIC + "'Magic is Might.'");
 		}
 	}
 }
