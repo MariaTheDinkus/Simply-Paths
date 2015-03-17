@@ -14,6 +14,8 @@ item.tooltip.yellowFullVariant=Yellow Full Line
 item.tooltip.whiteBrokenVariant=White Broken Line
 item.tooltip.yellowBrokenVariant=Yellow Broken Line
 item.tooltip.whiteIntersectionVariant=White Intersection
+item.tooltip.metalVariant=Bolted
+item.tooltip.laboratoryVariant=Diamond Plate
 
 tile.blockSlowMovingPath.name=Slow Conveyor
 tile.blockFastMovingPath.name=Fast Conveyor
@@ -86,6 +88,9 @@ tile.blockBirchPlankPath.name=Birch Plank Path
 tile.blockJunglePlankPath.name=Jungle Plank Path
 tile.blockAcaciaPlankPath.name=Acacia Plank Path
 tile.blockDarkOakPlankPath.name=Dark Oak Plank Path
-tile.blockLaboratoryPath.name=Laboratory Path
+tile.laboratoryBlock.name=Metal Block
+tile.metalBlock.name=Metal Block
+tile.blockMetalPath.name=Metal Path
+tile.blockLaboratoryPath.name=Metal Path
 
 tile.blockCarpentersPath.name=Carpenter's Path

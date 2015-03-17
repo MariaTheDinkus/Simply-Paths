@@ -30,12 +30,12 @@ public class SimplyPathsBlocks
 {
 	public static Block blockSlowMovingPath, blockFastMovingPath, blockFastestMovingPath, blockSlowMovingStairPath, blockFastMovingStairPath, blockFastestMovingStairPath, blockSlowDownMovingStairPath, blockFastDownMovingStairPath, blockFastestDownMovingStairPath;
 	public static Block blockLowRangeItemPropeller, blockMidRangeItemPropeller, blockHighRangeItemPropeller;
-	public static Block asphaultBlock, whiteLineBlock, yellowLineBlock, yellowBricksBlock, blackBricksBlock;
+	public static Block asphaultBlock, whiteLineBlock, yellowLineBlock, yellowBricksBlock, blackBricksBlock, laboratoryBlock, metalBlock;
 	public static Block blockAsphaultFullWhitePath, blockAsphaultBrokenWhitePath, blockAsphaultFullYellowPath, blockAsphaultBrokenYellowPath, blockAsphaultWhiteIntersectionPath;
 	public static Block blockPath, blockDarkPath, blockDirtPath, blockClayPath, blockGravelPath, blockSandPath, blockRedSandPath, blockSoulSandPath, blockPodzolPath;
     public static Block blockAsphaultPath, blockWhiteLinePath, blockYellowLinePath, blockSandstonePath, blockCobblestonePath, blockStonePath, blockStoneBrickPath, blockBricksPath, blockYellowBricksPath, blockBlackBricksPath, blockQuartzPath, blockChiselledQuartzPath, blockPillarQuartzPath, blockNetherrackPath, blockGlowstonePath;
     public static Block blockOakPlankPath, blockSprucePlankPath, blockBirchPlankPath, blockJunglePlankPath, blockAcaciaPlankPath, blockDarkOakPlankPath;
-    public static Block blockLaboratoryPath, blockCarpentersPath;
+    public static Block blockLaboratoryPath, blockMetalPath, blockCarpentersPath;
     public static Block blockWoolPath;
     public static void load()
     {
@@ -56,6 +56,8 @@ public class SimplyPathsBlocks
         blockHighRangeItemPropeller = new BlockHighRangeItemPropeller(Material.rock, BlockInfo.BLOCK_HIGH_RANGE_ITEM_PROPELLER_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
     	
     	asphaultBlock = new BlockNormal(BlockInfo.ASPHAULT_UNLOCALIZED_NAME, "stone", 1.5F, 0, "stone");
+    	laboratoryBlock = new BlockNormal(BlockInfo.LABORATORY_UNLOCALIZED_NAME, "stone", 1.5F, 0, "stone");
+    	metalBlock = new BlockMetal(BlockInfo.METAL_UNLOCALIZED_NAME, "stone", 1.5F, 0, "stone");
     	whiteLineBlock = new BlockNormal(BlockInfo.WHITE_LINE_UNLOCALIZED_NAME, "stone", 1.5F, 0, "stone");
     	yellowLineBlock = new BlockNormal(BlockInfo.YELLOW_LINE_UNLOCALIZED_NAME, "stone", 1.5F, 0, "stone");
     	yellowBricksBlock = new BlockNormal(BlockInfo.YELLOW_BRICKS_UNLOCALIZED_NAME, "stone", 1.5F, 0, "stone");
@@ -97,6 +99,7 @@ public class SimplyPathsBlocks
         blockDarkOakPlankPath = new BlockVanillaPath(Material.wood, BlockInfo.DARK_OAK_PLANK_PATH_UNLOCALIZED_NAME, "planks_big_oak", "wood", 2.0F, 0, "axe");
         blockWoolPath = new BlockWoolPath(Material.cloth, BlockInfo.WOOL_PATH_UNLOCALIZED_NAME, "wool", 0.8F);
         blockLaboratoryPath = new BlockCustomPath(Material.rock, BlockInfo.LABORATORY_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
+        blockMetalPath = new BlockMetalPath(Material.rock, BlockInfo.METAL_PATH_UNLOCALIZED_NAME, "stone", 1.5F, 0, "pickaxe");
         
         if (Loader.isModLoaded("CarpentersBlocks")) {
         blockCarpentersPath = new BlockCarpentersPath(Material.wood).setBlockName("blockCarpentersPath").setHardness(0.2F).setStepSound(BlockProperties.stepSound).setCreativeTab(CarpentersBlocks.creativeTab);
@@ -121,6 +124,8 @@ public class SimplyPathsBlocks
         register(blockHighRangeItemPropeller);
         
         register(asphaultBlock);
+        register(laboratoryBlock);
+        register(metalBlock);
         register(whiteLineBlock);
         register(yellowLineBlock);
         register(yellowBricksBlock);
@@ -161,6 +166,7 @@ public class SimplyPathsBlocks
         register(blockAcaciaPlankPath);
         register(blockDarkOakPlankPath);
         register(blockLaboratoryPath);
+        register(blockMetalPath);
         GameRegistry.registerBlock(SimplyPathsBlocks.blockWoolPath, ItemBlockWoolPath.class, SimplyPathsBlocks.blockWoolPath.getUnlocalizedName().substring(5));
     }
     

@@ -38,6 +38,8 @@ public class SimplyPathsCreativeTab extends CreativeTabs {
 		
 		addItem(SimplyPathsItems.pathChisel);
 		addBlock(SimplyPathsBlocks.asphaultBlock);
+		addBlock(SimplyPathsBlocks.metalBlock);
+		addBlock(SimplyPathsBlocks.laboratoryBlock);
 		addBlock(SimplyPathsBlocks.yellowBricksBlock);
 		addBlock(SimplyPathsBlocks.blackBricksBlock);
 		list.add(new ItemStack(SimplyPathsBlocks.blockWoolPath, 1, 0));
@@ -89,6 +91,7 @@ public class SimplyPathsCreativeTab extends CreativeTabs {
 		addBlock(SimplyPathsBlocks.blockAsphaultFullYellowPath);
 		addBlock(SimplyPathsBlocks.blockAsphaultBrokenYellowPath);
 		addBlock(SimplyPathsBlocks.blockAsphaultWhiteIntersectionPath);
+		addBlock(SimplyPathsBlocks.blockMetalPath);
 		addBlock(SimplyPathsBlocks.blockLaboratoryPath);
 	}
 

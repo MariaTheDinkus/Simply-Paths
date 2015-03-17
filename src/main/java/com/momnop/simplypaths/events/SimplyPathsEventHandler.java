@@ -293,6 +293,31 @@ public class SimplyPathsEventHandler {
 					getHeldItem.damageItem(1, event.entityPlayer);
 					event.world.setBlock(event.x, event.y, event.z,
 							SimplyPathsBlocks.blockYellowBricksPath);
+				} else if (event.world.blockExists(event.x, event.y, event.z)
+						&& event.world.getBlock(event.x, event.y, event.z) == SimplyPathsBlocks.blackBricksBlock) {
+					getHeldItem.damageItem(1, event.entityPlayer);
+					event.world.setBlock(event.x, event.y, event.z,
+							SimplyPathsBlocks.blockBlackBricksPath);
+				} else if (event.world.blockExists(event.x, event.y, event.z)
+						&& event.world.getBlock(event.x, event.y, event.z) == SimplyPathsBlocks.metalBlock) {
+					getHeldItem.damageItem(1, event.entityPlayer);
+					event.world.setBlock(event.x, event.y, event.z,
+							SimplyPathsBlocks.blockMetalPath);
+				} else if (event.world.blockExists(event.x, event.y, event.z)
+						&& event.world.getBlock(event.x, event.y, event.z) == SimplyPathsBlocks.laboratoryBlock) {
+					getHeldItem.damageItem(1, event.entityPlayer);
+					event.world.setBlock(event.x, event.y, event.z,
+							SimplyPathsBlocks.blockLaboratoryPath);
+				} else if (event.world.blockExists(event.x, event.y, event.z)
+						&& event.world.getBlock(event.x, event.y, event.z) == SimplyPathsBlocks.blockMetalPath) {
+					getHeldItem.damageItem(1, event.entityPlayer);
+					event.world.setBlock(event.x, event.y, event.z,
+							SimplyPathsBlocks.blockLaboratoryPath);
+				} else if (event.world.blockExists(event.x, event.y, event.z)
+						&& event.world.getBlock(event.x, event.y, event.z) == SimplyPathsBlocks.blockLaboratoryPath) {
+					getHeldItem.damageItem(1, event.entityPlayer);
+					event.world.setBlock(event.x, event.y, event.z,
+							SimplyPathsBlocks.blockMetalPath);
 				} else {
 
 				}
@@ -368,6 +393,10 @@ public class SimplyPathsEventHandler {
 		TooltipHelper.addVariantTooltip(event.itemStack, SimplyPathsBlocks.blockAsphaultBrokenYellowPath, "item.tooltip.yellowBrokenVariant", event.toolTip);
 		TooltipHelper.addVariantTooltip(event.itemStack, SimplyPathsBlocks.blockAsphaultWhiteIntersectionPath, "item.tooltip.whiteIntersectionVariant", event.toolTip);
 		TooltipHelper.addVariantTooltip(event.itemStack, SimplyPathsBlocks.blockDarkPath, "item.tooltip.darkPathVariant", event.toolTip);
+		TooltipHelper.addVariantTooltip(event.itemStack, SimplyPathsBlocks.blockLaboratoryPath, "item.tooltip.laboratoryVariant", event.toolTip);
+		TooltipHelper.addVariantTooltip(event.itemStack, SimplyPathsBlocks.blockMetalPath, "item.tooltip.metalVariant", event.toolTip);
+		TooltipHelper.addVariantTooltip(event.itemStack, SimplyPathsBlocks.laboratoryBlock, "item.tooltip.laboratoryVariant", event.toolTip);
+		TooltipHelper.addVariantTooltip(event.itemStack, SimplyPathsBlocks.metalBlock, "item.tooltip.metalVariant", event.toolTip);
 		
 		if (event.itemStack.getItem() == Item.getItemFromBlock(SimplyPathsBlocks.blockYellowBricksPath)) {
 			event.toolTip.add(EnumChatFormatting.ITALIC + "'We're off to see the wizard!'");

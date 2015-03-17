@@ -3,6 +3,8 @@ package com.momnop.simplypaths.info;
 public class BlockInfo
 {
 	public static final String ASPHAULT_UNLOCALIZED_NAME = "asphaultBlock";
+	public static final String LABORATORY_UNLOCALIZED_NAME = "laboratoryBlock";
+	public static final String METAL_UNLOCALIZED_NAME = "metalBlock";
 	public static final String WHITE_LINE_UNLOCALIZED_NAME = "whiteLineBlock";
 	public static final String YELLOW_LINE_UNLOCALIZED_NAME = "yellowLineBlock";
 	public static final String YELLOW_BRICKS_UNLOCALIZED_NAME = "yellowBricksBlock";
@@ -44,6 +46,7 @@ public class BlockInfo
     public static final String DARK_OAK_PLANK_PATH_UNLOCALIZED_NAME = "blockDarkOakPlankPath";
     public static final String WOOL_PATH_UNLOCALIZED_NAME = "blockWoolPath";
     public static final String LABORATORY_PATH_UNLOCALIZED_NAME = "blockLaboratoryPath";
+    public static final String METAL_PATH_UNLOCALIZED_NAME = "blockMetalPath";
     
     public static final String SLOW_MOVING_PATH_UNLOCALIZED_NAME = "blockSlowMovingPath";
     public static final String FAST_MOVING_PATH_UNLOCALIZED_NAME = "blockFastMovingPath";
