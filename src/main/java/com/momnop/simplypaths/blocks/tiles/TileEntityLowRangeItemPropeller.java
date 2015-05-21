@@ -7,14 +7,15 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.AxisAlignedBB;
 
 public class TileEntityLowRangeItemPropeller extends TileEntity {
 
 	@Override
 	public void updateEntity() {
 		int x = this.xCoord, y = this.yCoord, z = this.zCoord;
-		List entities = this.worldObj.getEntitiesWithinAABB(EntityItem.class,
-				this.getRenderBoundingBox().expand(0, 3, 0));
+		List entities = this.worldObj.getEntitiesWithinAABB(Entity.class, AxisAlignedBB.getBoundingBox(
+                x, y, z, x + 1, yCoord + 3, z + 1));
 		for (Object obj : entities) {
 			if (obj instanceof EntityItem) {
 				EntityItem entity = (EntityItem) obj;

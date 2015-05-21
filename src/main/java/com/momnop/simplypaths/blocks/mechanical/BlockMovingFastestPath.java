@@ -137,6 +137,11 @@ public class BlockMovingFastestPath extends Block {
 			}
 		}
 	}
+	
+	@Override
+	public int damageDropped(int dropped) {
+		return 4;
+	}
 
 	@Override
 	public void onBlockPlacedBy(World par1World, int par2, int par3, int par4,

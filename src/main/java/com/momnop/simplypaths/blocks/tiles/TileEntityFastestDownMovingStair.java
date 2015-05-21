@@ -7,6 +7,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.AxisAlignedBB;
 
 public class TileEntityFastestDownMovingStair extends TileEntity {
 	
@@ -14,7 +15,8 @@ public class TileEntityFastestDownMovingStair extends TileEntity {
     public void updateEntity()
     {
             int x = this.xCoord, y = this.yCoord, z = this.zCoord;
-            List entities = this.worldObj.getEntitiesWithinAABB(Entity.class, this.getRenderBoundingBox().expand(0, 1, 0));
+            List entities = this.worldObj.getEntitiesWithinAABB(Entity.class, AxisAlignedBB.getBoundingBox(
+            		x, y + 1, z, x + 1, yCoord + 1.1F, z + 1));
             for (Object obj : entities)
                {
                if (obj instanceof Entity) {

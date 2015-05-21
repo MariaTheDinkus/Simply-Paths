@@ -58,49 +58,61 @@ public class SimplyPathsEventHandler {
 						- (double) parEntity.yOffset),
 				MathHelper.floor_double(parEntity.posZ));
 	}
-	
+
 	@SubscribeEvent
 	public void onPlayerInteractStairs(PlayerInteractEvent event) {
 		ItemStack getHeldItem = event.entityPlayer.getCurrentEquippedItem();
-		
+
 		if (event.action == PlayerInteractEvent.Action.RIGHT_CLICK_BLOCK) {
 			if (getHeldItem != null
 					&& getHeldItem.getItem() == SimplyPathsItems.wrench) {
 				if (event.world.blockExists(event.x, event.y, event.z)
 						&& event.world.getBlock(event.x, event.y, event.z) == SimplyPathsBlocks.blockSlowMovingStairPath) {
-					event.world.playSoundAtEntity(event.entityPlayer, "random.anvil_use", 0.5f, 1.0f);
+					event.world.playSoundAtEntity(event.entityPlayer,
+							"random.anvil_use", 0.5f, 1.0f);
 					event.world.setBlock(event.x, event.y, event.z,
-							SimplyPathsBlocks.blockSlowDownMovingStairPath, event.world.getBlockMetadata(event.x, event.y,
+							SimplyPathsBlocks.blockSlowDownMovingStairPath,
+							event.world.getBlockMetadata(event.x, event.y,
 									event.z), 0);
 				} else if (event.world.blockExists(event.x, event.y, event.z)
 						&& event.world.getBlock(event.x, event.y, event.z) == SimplyPathsBlocks.blockSlowDownMovingStairPath) {
-					event.world.playSoundAtEntity(event.entityPlayer, "random.anvil_use", 0.5f, 1.0f);
+					event.world.playSoundAtEntity(event.entityPlayer,
+							"random.anvil_use", 0.5f, 1.0f);
 					event.world.setBlock(event.x, event.y, event.z,
-							SimplyPathsBlocks.blockSlowMovingStairPath, event.world.getBlockMetadata(event.x, event.y,
+							SimplyPathsBlocks.blockSlowMovingStairPath,
+							event.world.getBlockMetadata(event.x, event.y,
 									event.z), 0);
 				} else if (event.world.blockExists(event.x, event.y, event.z)
 						&& event.world.getBlock(event.x, event.y, event.z) == SimplyPathsBlocks.blockFastMovingStairPath) {
-					event.world.playSoundAtEntity(event.entityPlayer, "random.anvil_use", 0.5f, 1.0f);
+					event.world.playSoundAtEntity(event.entityPlayer,
+							"random.anvil_use", 0.5f, 1.0f);
 					event.world.setBlock(event.x, event.y, event.z,
-							SimplyPathsBlocks.blockFastDownMovingStairPath, event.world.getBlockMetadata(event.x, event.y,
+							SimplyPathsBlocks.blockFastDownMovingStairPath,
+							event.world.getBlockMetadata(event.x, event.y,
 									event.z), 0);
 				} else if (event.world.blockExists(event.x, event.y, event.z)
 						&& event.world.getBlock(event.x, event.y, event.z) == SimplyPathsBlocks.blockFastDownMovingStairPath) {
-					event.world.playSoundAtEntity(event.entityPlayer, "random.anvil_use", 0.5f, 1.0f);
+					event.world.playSoundAtEntity(event.entityPlayer,
+							"random.anvil_use", 0.5f, 1.0f);
 					event.world.setBlock(event.x, event.y, event.z,
-							SimplyPathsBlocks.blockFastMovingStairPath, event.world.getBlockMetadata(event.x, event.y,
+							SimplyPathsBlocks.blockFastMovingStairPath,
+							event.world.getBlockMetadata(event.x, event.y,
 									event.z), 0);
 				} else if (event.world.blockExists(event.x, event.y, event.z)
 						&& event.world.getBlock(event.x, event.y, event.z) == SimplyPathsBlocks.blockFastestMovingStairPath) {
-					event.world.playSoundAtEntity(event.entityPlayer, "random.anvil_use", 0.5f, 1.0f);
+					event.world.playSoundAtEntity(event.entityPlayer,
+							"random.anvil_use", 0.5f, 1.0f);
 					event.world.setBlock(event.x, event.y, event.z,
-							SimplyPathsBlocks.blockFastestDownMovingStairPath, event.world.getBlockMetadata(event.x, event.y,
+							SimplyPathsBlocks.blockFastestDownMovingStairPath,
+							event.world.getBlockMetadata(event.x, event.y,
 									event.z), 0);
 				} else if (event.world.blockExists(event.x, event.y, event.z)
 						&& event.world.getBlock(event.x, event.y, event.z) == SimplyPathsBlocks.blockFastestDownMovingStairPath) {
-					event.world.playSoundAtEntity(event.entityPlayer, "random.anvil_use", 0.5f, 1.0f);
+					event.world.playSoundAtEntity(event.entityPlayer,
+							"random.anvil_use", 0.5f, 1.0f);
 					event.world.setBlock(event.x, event.y, event.z,
-							SimplyPathsBlocks.blockFastestMovingStairPath, event.world.getBlockMetadata(event.x, event.y,
+							SimplyPathsBlocks.blockFastestMovingStairPath,
+							event.world.getBlockMetadata(event.x, event.y,
 									event.z), 0);
 				}
 			}
@@ -336,6 +348,8 @@ public class SimplyPathsEventHandler {
 					|| getHeldItem != null && ConfigHandler.pathChisel == true
 					&& getHeldItem.getItem() == SimplyPathsItems.pathChisel) {
 				if (event.world.blockExists(event.x, event.y, event.z)
+						&& event.world.getBlockMetadata(event.x, event.y,
+								event.z) == 0
 						&& event.world.getBlock(event.x, event.y, event.z) == Blocks.planks) {
 					getHeldItem.damageItem(1, event.entityPlayer);
 					event.world.setBlock(event.x, event.y, event.z,
@@ -384,25 +398,49 @@ public class SimplyPathsEventHandler {
 			}
 		}
 	}
-	
+
 	@SubscribeEvent
 	public void setTooltips(ItemTooltipEvent event) {
-		TooltipHelper.addVariantTooltip(event.itemStack, SimplyPathsBlocks.blockAsphaultFullWhitePath, "item.tooltip.whiteFullVariant", event.toolTip);
-		TooltipHelper.addVariantTooltip(event.itemStack, SimplyPathsBlocks.blockAsphaultFullYellowPath, "item.tooltip.yellowFullVariant", event.toolTip);
-		TooltipHelper.addVariantTooltip(event.itemStack, SimplyPathsBlocks.blockAsphaultBrokenWhitePath, "item.tooltip.whiteBrokenVariant", event.toolTip);
-		TooltipHelper.addVariantTooltip(event.itemStack, SimplyPathsBlocks.blockAsphaultBrokenYellowPath, "item.tooltip.yellowBrokenVariant", event.toolTip);
-		TooltipHelper.addVariantTooltip(event.itemStack, SimplyPathsBlocks.blockAsphaultWhiteIntersectionPath, "item.tooltip.whiteIntersectionVariant", event.toolTip);
-		TooltipHelper.addVariantTooltip(event.itemStack, SimplyPathsBlocks.blockDarkPath, "item.tooltip.darkPathVariant", event.toolTip);
-		TooltipHelper.addVariantTooltip(event.itemStack, SimplyPathsBlocks.blockLaboratoryPath, "item.tooltip.laboratoryVariant", event.toolTip);
-		TooltipHelper.addVariantTooltip(event.itemStack, SimplyPathsBlocks.blockMetalPath, "item.tooltip.metalVariant", event.toolTip);
-		TooltipHelper.addVariantTooltip(event.itemStack, SimplyPathsBlocks.laboratoryBlock, "item.tooltip.laboratoryVariant", event.toolTip);
-		TooltipHelper.addVariantTooltip(event.itemStack, SimplyPathsBlocks.metalBlock, "item.tooltip.metalVariant", event.toolTip);
-		
-		if (event.itemStack.getItem() == Item.getItemFromBlock(SimplyPathsBlocks.blockYellowBricksPath)) {
-			event.toolTip.add(EnumChatFormatting.ITALIC + "'We're off to see the wizard!'");
-		} else if (event.itemStack.getItem() == Item.getItemFromBlock(SimplyPathsBlocks.blackBricksBlock)) {
+		TooltipHelper.addVariantTooltip(event.itemStack,
+				SimplyPathsBlocks.blockAsphaultFullWhitePath,
+				"item.tooltip.whiteFullVariant", event.toolTip);
+		TooltipHelper.addVariantTooltip(event.itemStack,
+				SimplyPathsBlocks.blockAsphaultFullYellowPath,
+				"item.tooltip.yellowFullVariant", event.toolTip);
+		TooltipHelper.addVariantTooltip(event.itemStack,
+				SimplyPathsBlocks.blockAsphaultBrokenWhitePath,
+				"item.tooltip.whiteBrokenVariant", event.toolTip);
+		TooltipHelper.addVariantTooltip(event.itemStack,
+				SimplyPathsBlocks.blockAsphaultBrokenYellowPath,
+				"item.tooltip.yellowBrokenVariant", event.toolTip);
+		TooltipHelper.addVariantTooltip(event.itemStack,
+				SimplyPathsBlocks.blockAsphaultWhiteIntersectionPath,
+				"item.tooltip.whiteIntersectionVariant", event.toolTip);
+		TooltipHelper.addVariantTooltip(event.itemStack,
+				SimplyPathsBlocks.blockDarkPath,
+				"item.tooltip.darkPathVariant", event.toolTip);
+		TooltipHelper.addVariantTooltip(event.itemStack,
+				SimplyPathsBlocks.blockLaboratoryPath,
+				"item.tooltip.laboratoryVariant", event.toolTip);
+		TooltipHelper.addVariantTooltip(event.itemStack,
+				SimplyPathsBlocks.blockMetalPath, "item.tooltip.metalVariant",
+				event.toolTip);
+		TooltipHelper.addVariantTooltip(event.itemStack,
+				SimplyPathsBlocks.laboratoryBlock,
+				"item.tooltip.laboratoryVariant", event.toolTip);
+		TooltipHelper.addVariantTooltip(event.itemStack,
+				SimplyPathsBlocks.metalBlock, "item.tooltip.metalVariant",
+				event.toolTip);
+
+		if (event.itemStack.getItem() == Item
+				.getItemFromBlock(SimplyPathsBlocks.blockYellowBricksPath)) {
+			event.toolTip.add(EnumChatFormatting.ITALIC
+					+ "'We're off to see the wizard!'");
+		} else if (event.itemStack.getItem() == Item
+				.getItemFromBlock(SimplyPathsBlocks.blackBricksBlock)) {
 			event.toolTip.add(EnumChatFormatting.ITALIC + "'Magic is Might.'");
-		} else if (event.itemStack.getItem() == Item.getItemFromBlock(SimplyPathsBlocks.blockBlackBricksPath)) {
+		} else if (event.itemStack.getItem() == Item
+				.getItemFromBlock(SimplyPathsBlocks.blockBlackBricksPath)) {
 			event.toolTip.add(EnumChatFormatting.ITALIC + "'Magic is Might.'");
 		}
 	}
